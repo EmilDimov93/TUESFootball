@@ -58,3 +58,4 @@ C:\Code\Football\obj\Debug\net8.0\refint\Football.dll
 C:\Code\Football\obj\Debug\net8.0\Football.pdb
 C:\Code\Football\obj\Debug\net8.0\Football.genruntimeconfig.cache
 C:\Code\Football\obj\Debug\net8.0\ref\Football.dll
+C:\Code\Football\obj\Debug\net8.0\Football.sourcelink.json

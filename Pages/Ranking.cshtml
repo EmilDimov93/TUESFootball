@@ -1,0 +1,131 @@
+@page
+@{
+    ViewData["Title"] = "Голмайстори";
+}
+
+@using System.IO;
+
+<style>
+table, th, td {
+  color: white;
+  height: 40px;
+}
+table {
+  width: 100%;
+  text-align: center;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 4%;
+}
+
+th {
+  height: 70px;
+}
+
+th, td {
+  border-bottom: 2px solid white;
+  border-right: 2px solid white;
+  padding: 0.5rem;
+}
+
+table tr td:first-child, 
+table tr th:first-child {
+  border-left: 2px solid white;
+}
+
+table tr th {
+  border-top: 2px solid white;
+}
+
+table tr:first-child th:first-child {
+  border-top-left-radius: 1rem;
+}
+
+table tr:first-child th:last-child {
+  border-top-right-radius: 1rem;
+}
+
+table tr:last-child td:first-child {
+  border-bottom-left-radius: 1rem;
+}
+
+table tr:last-child td:last-child {
+  border-bottom-right-radius: 1rem;
+}
+
+table tbody tr:hover td {
+  background-color: rgb(132, 97, 97)
+}
+
+tr:nth-child(odd) {
+  background-color: #5c0c15;
+}
+
+tr:nth-child(even) {
+  background-color: #5b252b;
+}
+
+</style>
+
+@{
+    
+    StreamReader sr = new StreamReader("C:\\Code\\Football\\Database\\players.txt");
+        String line;
+
+        List<List<string>> playerData = new List<List<string>>();
+
+        while ((line = sr.ReadLine()) != null)
+        {
+            string[] tarr = line.Split(";");
+
+            for (int i = 0; i < tarr.Length; i += 3)
+            {
+                List<string> sublist = new List<string>();
+
+                for (int j = 0; j < 3 && i + j < tarr.Length; j++)
+                {
+                    sublist.Add(tarr[i + j]);
+                }
+
+                playerData.Add(sublist);
+            }
+        }
+
+        sr.Close();
+
+        playerData = playerData.OrderByDescending(p => p[2]).ToList();
+}
+
+<p style="border-radius: 40%; background-color: #5c0c15; position: absolute; width: 30%; font-size: 2.8vw; color: white; text-align: center; margin-top: -3.5%; left: 50%; transform: translate(-50%, -50%);"><b>ГОЛМАЙСТОРИ</b></p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Играч</th>
+            <th>Клас</th>
+            <th>Голове</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(int i = 0; i < playerData.Count(); i++){
+
+            if(Int32.Parse(playerData[i][2]) == 0){break;}
+
+            <tr>
+
+                <td>
+                    @playerData[i][0]
+                </td>
+                <td>
+                    @playerData[i][1][0]@playerData[i][1][1]
+                    @playerData[i][1][2]
+                </td>
+                <td>
+                    @Int32.Parse(playerData[i][2])
+                </td>
+
+            </tr>
+
+        }
+    </tbody>
+</table>

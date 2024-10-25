@@ -1,0 +1,153 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+@using System; 
+@using System.IO;
+
+<style>
+
+        table {
+            width: 60%;
+            margin: auto;
+            margin-top: 5%;
+            align-self: start;
+        }
+
+        th, td {
+            border: 1px solid #000000;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #5c0c15;
+        }
+
+        td {
+            background-color:  #4682b4;
+        }
+
+        .buttonMain {
+
+            width: 80%;
+            height: 2cm;
+            background-color: #5c0c15;
+            color: white;
+            font-size: 3vh;
+            border-color: white;
+            border-style: double;
+            border-radius: 10px;
+            margin:0 auto;
+            display:block;
+            text-shadow: 0 0 3px black, 0 0 5px black;
+            transition: background-color 0.5s ease, font-size 0.5s ease;
+
+        }
+
+        .buttonMain:hover {
+
+            transition: 0.5s;
+            font-size: 3.5vh;
+            background-color: #8e1320;
+
+        }
+
+        .buttonMain:hover::after {transition: 0.5s;}
+</style>
+
+@{
+
+    StreamReader sr = new StreamReader("C:\\Code\\Football\\Database\\tournaments.txt");
+
+    List<List<string>> upcoming = new List<List<string>>();
+
+    String line;
+
+    while ((line = sr.ReadLine()) != null)
+    {
+        string[] tarr = line.Split(";");
+
+        if(line[0] == '0'){
+            break;
+        }
+
+        for (int i = 0; i < tarr.Length; i += 4)
+        {
+
+            List<string> sublist = new List<string>();
+
+            for (int j = 0; j < 4 && i + j < tarr.Length; j++)
+            {
+                sublist.Add(tarr[i + j]);
+            }
+
+            upcoming.Add(sublist);
+        }
+
+    }
+
+    sr = new StreamReader("C:\\Code\\Football\\Database\\league_matches.txt");
+
+    while ((line = sr.ReadLine()) != null)
+    {
+        string[] tarr = line.Split(";");
+
+        if (tarr[0] != "1")
+        {
+            continue;
+        }
+
+        List<string> sublist = new List<string>();
+
+        for (int j = 0; j < tarr.Length; j++)
+        {
+            sublist.Add(tarr[j]);
+        }
+
+        upcoming.Add(sublist);
+    }
+
+}
+
+<body>
+
+    <button type="button" class="buttonMain" style="margin-bottom: 0.5cm; margin-top: 1.5cm;" onclick="location.href='/League'"><b>Лига</b></button>
+    <button type="button" class="buttonMain fa fa-toggle-right" onclick="location.href='/Tournaments'"><b>Турнир</b></button>
+
+    <div style="border-radius: 10px; background-color: #5c0c15; border-color: white; border-style: double; margin-top: 2cm; border-width: 0.1cm; height: fit-content;">
+
+        <p style="color: white; margin: 2vh; font-size: 3vh; display: flex; flex-direction: row; align-items: center; justify-content: center; text-shadow: 0 0 3px black, 0 0 5px black;"><b>Предстоящи:</b></p>
+
+        @{
+
+            int displayed_counter = 0;
+
+            for(int i = 0; i < upcoming.Count() && displayed_counter < 6; i++){
+                if(upcoming[i].Count()==4){
+                    if(upcoming[i][2] == "0"){
+                        <div style="background-image: url('https://fastly.4sqi.net/img/general/600x600/5351490_lP6aQ5XwbmONWAJra63k0t6B8GPCQfZJXavn2oGHKgU.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; border-radius: 10px; margin-left: 3vh; padding: 1.5%; border-color: white; color: white; border-style: groove; display: inline-block; text-align: center; text-shadow: 0 0 3px black, 0 0 5px black; margin-bottom: 3vh; margin-top: 1vh;"><b><div style="background-color: black; margin-bottom: -10%; margin-top: -15%; width: 130%; margin-left: -15%; border-color: white; border-top-left-radius: 10px; border-top-right-radius: 10px; border-top-style: groove; border-left-style: groove; border-right-style: groove; padding-bottom: 4%; padding-top: 2%;">Турнир</div><br>Мир и Дружба<br>@upcoming[i][0]<br>@upcoming[i][1]</b></div>
+                    }
+                    else{
+                        <div style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjgDPR0Vri0ZUFBI1Z_XaoiO0Ka0ZjcISzWg&s'); background-size: cover; background-position: center; background-repeat: no-repeat; border-radius: 10px; margin-left: 3vh; padding: 1.5%; border-color: white; color: white; border-style: groove; display: inline-block; text-align: center; text-shadow: 0 0 3px black, 0 0 5px black; margin-bottom: 3vh; margin-top: 1vh;"><b><div style="background-color: black; margin-bottom: -10%; margin-top: -15%; width: 130%; margin-left: -15%; border-color: white; border-top-left-radius: 10px; border-top-right-radius: 10px; border-top-style: groove; border-left-style: groove; border-right-style: groove; padding-bottom: 4%; padding-top: 2%;">Турнир</div><br>&nbsp;&nbsp;Олемаспорт&nbsp;&nbsp;<br>@upcoming[i][0]<br>@upcoming[i][1]</b></div>
+                    }
+                }
+                else{
+                    if(upcoming[i][6] == "0"){
+                        <div style="background-image: url('https://fastly.4sqi.net/img/general/600x600/5351490_lP6aQ5XwbmONWAJra63k0t6B8GPCQfZJXavn2oGHKgU.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; border-radius: 10px; margin-left: 3vh; padding: 1.5%; border-color: white; color: white; border-style: groove; display: inline-block; text-align: center; text-shadow: 0 0 3px black, 0 0 5px black; margin-bottom: 3vh; margin-top: 1vh;"><b><div style="background-color: black; margin-bottom: -10%; margin-top: -15%; width: 130%; margin-left: -15%; border-color: white; border-top-left-radius: 10px; border-top-right-radius: 10px; border-top-style: groove; border-left-style: groove; border-right-style: groove; padding-bottom: 4%; padding-top: 2%;">Мач</div><br>Мир и Дружба<br>@upcoming[i][5]<br>@upcoming[i][4]</b></div>
+                    }
+                    else{
+                        <div style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjgDPR0Vri0ZUFBI1Z_XaoiO0Ka0ZjcISzWg&s'); background-size: cover; background-position: center; background-repeat: no-repeat; border-radius: 10px; margin-left: 3vh; padding: 1.5%; border-color: white; color: white; border-style: groove; display: inline-block; text-align: center; text-shadow: 0 0 3px black, 0 0 5px black; margin-bottom: 3vh; margin-top: 1vh;"><b><div style="background-color: black; margin-bottom: -10%; margin-top: -15%; width: 130%; margin-left: -15%; border-color: white; border-top-left-radius: 10px; border-top-right-radius: 10px; border-top-style: groove; border-left-style: groove; border-right-style: groove; padding-bottom: 4%; padding-top: 2%;">Мач</div><br>&nbsp;&nbsp;Олемаспорт&nbsp;&nbsp;<br>@upcoming[i][5]<br>@upcoming[i][4]</b></div>
+                    }
+                }
+
+                displayed_counter++;
+
+            }
+        }
+
+    </div>
+
+</body>

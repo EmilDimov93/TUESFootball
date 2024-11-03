@@ -78,7 +78,9 @@ tr:nth-child(even) {
 
     List<List<string>> tournaments = new List<List<string>>();
 
-    using (StreamReader sr = new StreamReader("C:\\Code\\Football\\Database\\tournaments.txt"))
+    var filePath1 = System.IO.Path.Combine(AppContext.BaseDirectory, "Database", "tournaments.txt");
+
+    using (StreamReader sr = new StreamReader(filePath1))
     {
         string line;
         while ((line = sr.ReadLine()) != null)

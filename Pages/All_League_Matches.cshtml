@@ -69,7 +69,9 @@ tr:nth-child(even) {
 
 @{
     
-    StreamReader sr = new StreamReader("C:\\Code\\Football\\Database\\league_matches.txt");
+    var filePath1 = System.IO.Path.Combine(AppContext.BaseDirectory, "Database", "league_matches.txt");
+
+    StreamReader sr = new StreamReader(filePath1);
         String line;
 
         List<List<string>> matchData = new List<List<string>>();

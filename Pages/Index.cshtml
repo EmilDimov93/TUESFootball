@@ -60,7 +60,10 @@
 
 @{
 
-    StreamReader sr = new StreamReader("C:\\Code\\Football\\Database\\tournaments.txt");
+
+    var filePath1 = System.IO.Path.Combine(AppContext.BaseDirectory, "Database", "tournaments.txt");
+
+    StreamReader sr = new StreamReader(filePath1);
 
     List<List<string>> upcoming = new List<List<string>>();
 
@@ -89,7 +92,9 @@
 
     }
 
-    sr = new StreamReader("C:\\Code\\Football\\Database\\league_matches.txt");
+    var filePath2 = System.IO.Path.Combine(AppContext.BaseDirectory, "Database", "league_matches.txt");
+
+    sr = new StreamReader(filePath2);
 
     while ((line = sr.ReadLine()) != null)
     {

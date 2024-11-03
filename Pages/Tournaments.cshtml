@@ -3,7 +3,10 @@
     ViewData["Title"] = "Голмайстори";
 }
 
-@using System.IO;
+@using System.IO
+@using Microsoft.AspNetCore.Hosting
+
+@inject IWebHostEnvironment _env
 
 <style>
 table, th, td {
@@ -72,19 +75,18 @@ tr:nth-child(even) {
 <p style="border-radius: 40%; background-color: #5c0c15; position: absolute; width: 20%; font-size: 2.8vw; color: white; text-align: center; margin-top: -2.5%; left: 50%; transform: translate(-50%, -50%);"><b>ТУРНУРИ</b></p>
 
 @{
-    
-    StreamReader sr = new StreamReader("C:\\Code\\Football\\Database\\tournaments.txt");
-        String line;
 
-        List<List<string>> tournaments = new List<List<string>>();
+    List<List<string>> tournaments = new List<List<string>>();
 
+    using (StreamReader sr = new StreamReader("C:\\Code\\Football\\Database\\tournaments.txt"))
+    {
+        string line;
         while ((line = sr.ReadLine()) != null)
         {
             string[] tarr = line.Split(";");
 
             for (int i = 0; i < tarr.Length; i += 5)
             {
-
                 List<string> sublist = new List<string>();
 
                 for (int j = 0; j < 5 && i + j < tarr.Length; j++)
@@ -95,41 +97,9 @@ tr:nth-child(even) {
                 tournaments.Add(sublist);
             }
         }
+    }
 
-        sr.Close();
-
-        //tournaments = tournaments.OrderByDescending(p => p[2]).ToList();
-
-        /*List<List<string>> leagueMatches = new List<List<string>>();
-
-        sr = new StreamReader("C:\\Code\\Football\\Database\\tournaments.txt");
-
-        while ((line = sr.ReadLine()) != null)
-        {
-            string[] tarr = line.Split(";");
-
-            for (int i = 0; i < tarr.Length; i += 6)
-            {
-
-                List<string> sublist = new List<string>();
-
-                for (int j = 0; j < 6 && i + j < tarr.Length; j++)
-                {
-                    sublist.Add(tarr[i + j]);
-                }
-
-                leagueMatches.Add(sublist);
-            }
-        }
-        for(int i = 0; i < leagueMatches.Count() && i < 6 && leagueMatches[i][0] == "0"; i++){
-
-            <div style="background-color: black; border-radius: 10px; margin-left: 3vh; padding: 2vh; border-color: white; color: white; border-style: groove; display: inline-block; text-align: center; text-shadow: 0 0 3px black, 0 0 5px black; margin-bottom: 2%; margin-top: 2.5%;"><b>@leagueMatches[i][1] @leagueMatches[i][2] @leagueMatches[i][3]<br>@leagueMatches[i][4]<br>@leagueMatches[i][5]</b></div>
-
-        }
-
-        sr.Close();*/
-
-        int end_index = 0;
+    int end_index = 0;
 }
 
 <table>

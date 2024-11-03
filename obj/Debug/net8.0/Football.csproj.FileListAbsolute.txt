@@ -59,3 +59,4 @@ C:\Code\Football\obj\Debug\net8.0\Football.pdb
 C:\Code\Football\obj\Debug\net8.0\Football.genruntimeconfig.cache
 C:\Code\Football\obj\Debug\net8.0\ref\Football.dll
 C:\Code\Football\obj\Debug\net8.0\Football.sourcelink.json
+C:\Code\Football\bin\Debug\net8.0\web.config

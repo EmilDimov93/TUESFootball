@@ -4,6 +4,8 @@
     ViewData["Title"] = "Home page";
 }
 
+@inject Microsoft.AspNetCore.Hosting.IWebHostEnvironment Env
+
 @using System; 
 @using System.IO;
 
@@ -61,7 +63,7 @@
 @{
 
 
-    var filePath1 = System.IO.Path.GetFullPath(System.IO.Path.Combine(AppContext.BaseDirectory, "..", "..", "..", "Database", "tournaments.txt"));
+    var filePath1 = System.IO.Path.Combine(Env.WebRootPath, "Database", "tournaments.txt");
 
     StreamReader sr = new StreamReader(filePath1);
 
@@ -92,7 +94,7 @@
 
     }
 
-    var filePath2 = System.IO.Path.GetFullPath(System.IO.Path.Combine(AppContext.BaseDirectory, "..", "..", "..", "Database", "league_matches.txt"));
+    var filePath2 = System.IO.Path.Combine(Env.WebRootPath, "Database", "league_matches.txt");
 
     sr = new StreamReader(filePath2);
 

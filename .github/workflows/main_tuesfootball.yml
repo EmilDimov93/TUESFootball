@@ -25,7 +25,7 @@ jobs:
         run: dotnet build ${{ github.workspace }}/Football.generated.sln --configuration Release
 
       - name: dotnet publish
-        run: dotnet publish ${{ github.workspace }}/Football.generated.sln -c Release -o ./publish
+        run: dotnet publish ${{ github.workspace }}/Football.generated.sln -c Release -o "${{env.DOTNET_ROOT}}/myapp"
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4

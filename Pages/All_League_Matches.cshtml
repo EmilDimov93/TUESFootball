@@ -69,7 +69,7 @@ tr:nth-child(even) {
 
 @{
     
-    var filePath1 = System.IO.Path.Combine(AppContext.BaseDirectory, "wwwroot", "Database", "league_matches.txt");
+    var filePath1 = System.IO.Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Database", "league_matches.txt");
 
     StreamReader sr = new StreamReader(filePath1);
         String line;

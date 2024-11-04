@@ -5,6 +5,22 @@
       "PackagePath": "staticwebassets\\Football.bundle.scp.css"
     },
     {
+      "Id": "C:\\Code\\Football\\wwwroot\\Database\\league_matches.txt",
+      "PackagePath": "staticwebassets\\Database\\league_matches.txt"
+    },
+    {
+      "Id": "C:\\Code\\Football\\wwwroot\\Database\\league_teams.txt",
+      "PackagePath": "staticwebassets\\Database\\league_teams.txt"
+    },
+    {
+      "Id": "C:\\Code\\Football\\wwwroot\\Database\\players.txt",
+      "PackagePath": "staticwebassets\\Database\\players.txt"
+    },
+    {
+      "Id": "C:\\Code\\Football\\wwwroot\\Database\\tournaments.txt",
+      "PackagePath": "staticwebassets\\Database\\tournaments.txt"
+    },
+    {
       "Id": "C:\\Code\\Football\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

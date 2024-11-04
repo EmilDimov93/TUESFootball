@@ -71,7 +71,7 @@ tr:nth-child(even) {
 
 @{
     
-    var filePath1 = System.IO.Path.Combine(AppContext.BaseDirectory, "Database", "league_teams.txt");
+    var filePath1 = System.IO.Path.Combine(AppContext.BaseDirectory, "wwwroot", "Database", "league_teams.txt");
 
     StreamReader sr = new StreamReader(filePath1);
         String line;
@@ -102,7 +102,7 @@ tr:nth-child(even) {
 
         List<List<string>> leagueMatches = new List<List<string>>();
 
-        var filePath2 = System.IO.Path.Combine(AppContext.BaseDirectory, "Database", "league_matches.txt");
+        var filePath2 = System.IO.Path.Combine(AppContext.BaseDirectory, "wwwroot", "Database", "league_matches.txt");
 
         sr = new StreamReader(filePath2);
 

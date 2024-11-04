@@ -155,58 +155,51 @@
     </p>
 
     <!-- Container for upcoming boxes -->
-    <div style="scrollbar-width: none; display: flex; overflow-x: auto; white-space: nowrap;">
-        @{
+    <div style="scrollbar-width: none; display: flex; overflow-x: auto; white-space: nowrap; position: relative;">
+    @{
 
-            int displayed_counter = 0;
+        int displayed_counter = 0;
 
-            for(int i = 0; i < upcoming.Count() && displayed_counter < 6; i++) {
-                if(upcoming[i].Count() == 4) {
-                    if(upcoming[i][2] == "0") {
-                        <div class="upcomingBoxes" style="background-image: url('https://fastly.4sqi.net/img/general/600x600/5351490_lP6aQ5XwbmONWAJra63k0t6B8GPCQfZJXavn2oGHKgU.jpg');">
-                            <b>
-                                <div style="background-color: black; margin-bottom: -10%; margin-top: -15%; width: 130%; margin-left: -15%; border-color: white; border-top-left-radius: 10px; border-top-right-radius: 10px; border-top-style: groove; border-left-style: groove; border-right-style: groove; padding-bottom: 4%; padding-top: 2%;">
-                                    Турнир
-                                </div>
-                                <br>Мир и Дружба<br>@upcoming[i][0]<br>@upcoming[i][1]
-                            </b>
+        for(int i = 0; i < upcoming.Count() && displayed_counter < 6; i++) {
+            if(upcoming[i].Count() == 4) {
+                if(upcoming[i][2] == "0") {
+                    <div class="upcomingBoxes" style="position: relative; background-image: url('https://fastly.4sqi.net/img/general/600x600/5351490_lP6aQ5XwbmONWAJra63k0t6B8GPCQfZJXavn2oGHKgU.jpg'); width: 200px; margin-right: 10px;">
+                        <div style="position: absolute; top: -1px; left: 0; right: 0; background-color: black; border-color: white; border-top-left-radius: 10px; border-top-right-radius: 10px; border-top-style: groove; padding: 4px; text-align: center; margin: 0;">
+                            <b>Турнир</b>
                         </div>
-                    } else {
-                        <div class="upcomingBoxes" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjgDPR0Vri0ZUFBI1Z_XaoiO0Ka0ZjcISzWg&s');">
-                            <b>
-                                <div style="background-color: black; margin-bottom: -10%; margin-top: -15%; width: 130%; margin-left: -15%; border-color: white; border-top-left-radius: 10px; border-top-right-radius: 10px; border-top-style: groove; border-left-style: groove; border-right-style: groove; padding-bottom: 4%; padding-top: 2%;">
-                                    Турнир
-                                </div>
-                                <br>&nbsp;&nbsp;Олемаспорт&nbsp;&nbsp;<br>@upcoming[i][0]<br>@upcoming[i][1]
-                            </b>
-                        </div>
-                    }
+                        <br style="margin: 0;">Мир и Дружба<br>@upcoming[i][0]<br>@upcoming[i][1]
+                    </div>
                 } else {
-                    if(upcoming[i][6] == "0") {
-                        <div class="upcomingBoxes" style="background-image: url('https://fastly.4sqi.net/img/general/600x600/5351490_lP6aQ5XwbmONWAJra63k0t6B8GPCQfZJXavn2oGHKgU.jpg');">
-                            <b>
-                                <div style="background-color: black; margin-bottom: -10%; margin-top: -15%; width: 130%; margin-left: -15%; border-color: white; border-top-left-radius: 10px; border-top-right-radius: 10px; border-top-style: groove; border-left-style: groove; border-right-style: groove; padding-bottom: 4%; padding-top: 2%;">
-                                    Мач
-                                </div>
-                                <br>Мир и Дружба<br>@upcoming[i][5]<br>@upcoming[i][4]
-                            </b>
+                    <div class="upcomingBoxes" style="position: relative; background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjgDPR0Vri0ZUFBI1Z_XaoiO0Ka0ZjcISzWg&s'); width: 200px; margin-right: 10px;">
+                        <div style="position: absolute; top: -1px; left: 0; right: 0; background-color: black; border-color: white; border-top-left-radius: 10px; border-top-right-radius: 10px; border-top-style: groove; padding: 4px; text-align: center; margin: 0;">
+                            <b>Турнир</b>
                         </div>
-                    } else {
-                        <div class="upcomingBoxes" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjgDPR0Vri0ZUFBI1Z_XaoiO0Ka0ZjcISzWg&s');">
-                            <b>
-                                <div style="background-color: black; margin-bottom: -10%; margin-top: -15%; width: 130%; margin-left: -15%; border-color: white; border-top-left-radius: 10px; border-top-right-radius: 10px; border-top-style: groove; border-left-style: groove; border-right-style: groove; padding-bottom: 4%; padding-top: 2%;">
-                                    Мач
-                                </div>
-                                <br>&nbsp;&nbsp;Олемаспорт&nbsp;&nbsp;<br>@upcoming[i][5]<br>@upcoming[i][4]
-                            </b>
-                        </div>
-                    }
+                        <br style="margin: 0;">&nbsp;&nbsp;Олемаспорт&nbsp;&nbsp;<br>@upcoming[i][0]<br>@upcoming[i][1]
+                    </div>
                 }
-
-                displayed_counter++;
+            } else {
+                if(upcoming[i][6] == "0") {
+                    <div class="upcomingBoxes" style="position: relative; background-image: url('https://fastly.4sqi.net/img/general/600x600/5351490_lP6aQ5XwbmONWAJra63k0t6B8GPCQfZJXavn2oGHKgU.jpg'); width: 200px; margin-right: 10px;">
+                        <div style="position: absolute; top: -1px; left: 0; right: 0; background-color: black; border-color: white; border-top-left-radius: 10px; border-top-right-radius: 10px; border-top-style: groove; padding: 4px; text-align: center; margin: 0;">
+                            <b>Мач</b>
+                        </div>
+                        <br style="margin: 0;">Мир и Дружба<br>@upcoming[i][5]<br>@upcoming[i][4]
+                    </div>
+                } else {
+                    <div class="upcomingBoxes" style="position: relative; background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjgDPR0Vri0ZUFBI1Z_XaoiO0Ka0ZjcISzWg&s'); width: 200px; margin-right: 10px;">
+                        <div style="position: absolute; top: -1px; left: 0; right: 0; background-color: black; border-color: white; border-top-left-radius: 10px; border-top-right-radius: 10px; border-top-style: groove; padding: 4px; text-align: center; margin: 0;">
+                            <b>Мач</b>
+                        </div>
+                        <br style="margin: 0;">&nbsp;&nbsp;Олемаспорт&nbsp;&nbsp;<br>@upcoming[i][5]<br>@upcoming[i][4]
+                    </div>
+                }
             }
+
+            displayed_counter++;
         }
-        </div>
+    }
+</div>
+
     </div>
 
 </body>

@@ -63,7 +63,7 @@
 @{
 
 
-    var filePath1 = System.IO.Path.Combine(AppContext.BaseDirectory, "..", "Database", "tournaments.txt");
+    var filePath1 = System.IO.Path.Combine(AppContext.BaseDirectory, "wwwroot", "Database", "tournaments.txt");
 
     StreamReader sr = new StreamReader(filePath1);
 
@@ -94,7 +94,7 @@
 
     }
 
-    var filePath2 = System.IO.Path.Combine(AppContext.BaseDirectory, "..", "Database", "league_matches.txt");
+    var filePath2 = System.IO.Path.Combine(AppContext.BaseDirectory, "wwwroot", "Database", "league_matches.txt");
 
     sr = new StreamReader(filePath2);
 

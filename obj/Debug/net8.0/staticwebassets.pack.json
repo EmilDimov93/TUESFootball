@@ -5,28 +5,72 @@
       "PackagePath": "staticwebassets\\Football.bundle.scp.css"
     },
     {
-      "Id": "C:\\Code\\Football\\wwwroot\\Database\\league_matches.txt",
-      "PackagePath": "staticwebassets\\Database\\league_matches.txt"
+      "Id": "C:\\Code\\Football\\wwwroot\\Database\\1matches.txt",
+      "PackagePath": "staticwebassets\\Database\\1matches.txt"
     },
     {
-      "Id": "C:\\Code\\Football\\wwwroot\\Database\\league_teams.txt",
-      "PackagePath": "staticwebassets\\Database\\league_teams.txt"
+      "Id": "C:\\Code\\Football\\wwwroot\\Database\\1table.txt",
+      "PackagePath": "staticwebassets\\Database\\1table.txt"
     },
     {
-      "Id": "C:\\Code\\Football\\wwwroot\\Database\\players.txt",
-      "PackagePath": "staticwebassets\\Database\\players.txt"
+      "Id": "C:\\Code\\Football\\wwwroot\\Database\\1tournaments.txt",
+      "PackagePath": "staticwebassets\\Database\\1tournaments.txt"
     },
     {
-      "Id": "C:\\Code\\Football\\wwwroot\\Database\\tournaments.txt",
-      "PackagePath": "staticwebassets\\Database\\tournaments.txt"
+      "Id": "C:\\Code\\Football\\wwwroot\\Database\\2goals.txt",
+      "PackagePath": "staticwebassets\\Database\\2goals.txt"
+    },
+    {
+      "Id": "C:\\Code\\Football\\wwwroot\\Database\\2matches.txt",
+      "PackagePath": "staticwebassets\\Database\\2matches.txt"
+    },
+    {
+      "Id": "C:\\Code\\Football\\wwwroot\\Database\\2table.txt",
+      "PackagePath": "staticwebassets\\Database\\2table.txt"
+    },
+    {
+      "Id": "C:\\Code\\Football\\wwwroot\\Database\\2tournaments.txt",
+      "PackagePath": "staticwebassets\\Database\\2tournaments.txt"
+    },
+    {
+      "Id": "C:\\Code\\Football\\wwwroot\\Database\\Prev\\league_matches.txt",
+      "PackagePath": "staticwebassets\\Database\\Prev\\league_matches.txt"
+    },
+    {
+      "Id": "C:\\Code\\Football\\wwwroot\\Database\\Prev\\league_teams.txt",
+      "PackagePath": "staticwebassets\\Database\\Prev\\league_teams.txt"
+    },
+    {
+      "Id": "C:\\Code\\Football\\wwwroot\\Database\\Prev\\players.txt",
+      "PackagePath": "staticwebassets\\Database\\Prev\\players.txt"
+    },
+    {
+      "Id": "C:\\Code\\Football\\wwwroot\\Database\\Prev\\tournaments.txt",
+      "PackagePath": "staticwebassets\\Database\\Prev\\tournaments.txt"
+    },
+    {
+      "Id": "C:\\Code\\Football\\wwwroot\\Database\\currentPhase.txt",
+      "PackagePath": "staticwebassets\\Database\\currentPhase.txt"
     },
     {
       "Id": "C:\\Code\\Football\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
+      "Id": "C:\\Code\\Football\\wwwroot\\download.png",
+      "PackagePath": "staticwebassets\\download.png"
+    },
+    {
       "Id": "C:\\Code\\Football\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Code\\Football\\wwwroot\\image.png",
+      "PackagePath": "staticwebassets\\image.png"
+    },
+    {
+      "Id": "C:\\Code\\Football\\wwwroot\\image1.png",
+      "PackagePath": "staticwebassets\\image1.png"
     },
     {
       "Id": "C:\\Code\\Football\\wwwroot\\js\\site.js",

@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Football.styles.css" asp-append-version="true" />
     <link rel="shortcut icon" type="image/x-ico" href="~/favicon.ico" />
+    @using System;
+    @using System.IO;
+    @using SharedCode
 </head>
 <body style="background-color: #4682b4;">
     <header>
@@ -20,10 +23,10 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link" style="color: white;" asp-area="" asp-page="/Index"><b>Начало</b></a>
+                            <a class="nav-link" style="color: white;" asp-area="" asp-page="/Index" asp-route-selectedPhase="@SharedFunctions.GetCurrentPhase()"><b>Начало</b></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" style="color: white;" asp-area="" asp-page="/Ranking"><b>Голмайстори</b></a>
+                            <a class="nav-link" style="color: white;" asp-area="" asp-page="/Ranking" asp-route-selectedPhase="@SharedFunctions.GetCurrentPhase()"><b>Голмайстори</b></a>
                         </li>
                     </ul>
                     <img style="width:5.5vh; height:5vh; margin-right: 3%;" src="https://i.imgur.com/vgSIemK.png">
@@ -31,6 +34,34 @@
             </div>
         </nav>
     </header>
+
+    @{
+        int selectedPhase = 0;
+
+        var viewPath = ViewContext.View.Path; // Example: "/Views/Home/Index.cshtml"
+        var viewName = viewPath.Substring(viewPath.LastIndexOf("/") + 1); // Extract "Home/Index.cshtml"
+        var pageName = "/" + System.IO.Path.GetFileNameWithoutExtension(viewName); // Extract "/Index"
+
+        if (@Context.Request.Query["selectedPhase"].Count > 0)
+        {
+            int.TryParse(@Context.Request.Query["selectedPhase"], out selectedPhase);
+        }
+        else
+        {
+            selectedPhase = @SharedFunctions.GetCurrentPhase();
+        }
+    }
+
+    <div class="dropdown" style="margin-top:-20%;">
+        <button id="phaseButton" class="dropbtn">Phase @selectedPhase</button>
+        <div class="dropdown-content">
+            @for (int i = 0; i < SharedFunctions.GetCurrentPhase(); i++)
+            {
+            <a href="#" onclick="changePhase(@(i), '@pageName')">Phase @(i + 1)</a>
+            }
+        </div>
+    </div>
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()

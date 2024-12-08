@@ -18,24 +18,28 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Code\Football
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Code/Football/Pages/All_League_Matches.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWxsX0xlYWd1ZV9NYXRjaGVzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Code/Football/Pages/Error.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Code/Football/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Code/Football/Pages/League.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGVhZ3VlLmNzaHRtbA==
+[C:/Code/Football/Pages/OpenTournament.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3BlblRvdXJuYW1lbnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Code/Football/Pages/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
+[C:/Code/Football/Pages/PrevPages/All_League_Matches.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJldlBhZ2VzXEFsbF9MZWFndWVfTWF0Y2hlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Code/Football/Pages/PrevPages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJldlBhZ2VzXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Code/Football/Pages/PrevPages/League.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJldlBhZ2VzXExlYWd1ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Code/Football/Pages/PrevPages/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJldlBhZ2VzXFByaXZhY3kuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Code/Football/Pages/Ranking.cshtml]

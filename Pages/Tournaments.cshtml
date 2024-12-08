@@ -1,6 +1,6 @@
 @page
 @{
-    ViewData["Title"] = "Голмайстори";
+  ViewData["Title"] = "Турнири";
 }
 
 @using System.IO
@@ -8,170 +8,84 @@
 
 @inject IWebHostEnvironment _env
 
-<style>
-table, th, td {
-  color: white;
-  height: 40px;
-}
-table {
-  width: 75%;
-  text-align: center;
-  border-collapse: separate;
-  border-spacing: 0;
-  margin-top: 2%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-th {
-  height: 70px;
-}
-
-th, td {
-  border-bottom: 2px solid white;
-  border-right: 2px solid white;
-  padding: 0.5rem;
-}
-
-table tr td:first-child, 
-table tr th:first-child {
-  border-left: 2px solid white;
-}
-
-table tr th {
-  border-top: 2px solid white;
-}
-
-table tr:first-child th:first-child {
-  border-top-left-radius: 1rem;
-}
-
-table tr:first-child th:last-child {
-  border-top-right-radius: 1rem;
-}
-
-table tr:last-child td:first-child {
-  border-bottom-left-radius: 1rem;
-}
-
-table tr:last-child td:last-child {
-  border-bottom-right-radius: 1rem;
-}
-
-table tbody tr:hover td {
-  background-color: rgb(132, 97, 97)
-}
-
-tr:nth-child(odd) {
-  background-color: #5c0c15;
-}
-
-tr:nth-child(even) {
-  background-color: #5b252b;
-}
-
-</style>
-
-<p style="border-radius: 40%; background-color: #5c0c15; position: absolute; width: 40%; font-size: 250%; color: white; text-align: center; margin-top: -2.5%; left: 50%; transform: translate(-50%, -50%);"><b>ТУРНУРИ</b></p>
+@using SharedCode
 
 @{
 
-    List<List<string>> tournaments = new List<List<string>>();
+  List<List<string>> tournaments = new List<List<string>>();
 
-    var filePath1 = System.IO.Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Database", "tournaments.txt");
+  int selectedPhase = 0;
 
-    using (StreamReader sr = new StreamReader(filePath1))
+  void getTableContents()
+  {
+    if (Request.Query["selectedPhase"].Count > 0)
     {
-        string line;
-        while ((line = sr.ReadLine()) != null)
-        {
-            string[] tarr = line.Split(";");
-
-            for (int i = 0; i < tarr.Length; i += 5)
-            {
-                List<string> sublist = new List<string>();
-
-                for (int j = 0; j < 5 && i + j < tarr.Length; j++)
-                {
-                    sublist.Add(tarr[i + j]);
-                }
-
-                tournaments.Add(sublist);
-            }
-        }
+      int.TryParse(Request.Query["selectedPhase"], out selectedPhase);
     }
 
-    int end_index = 0;
+    using (StreamReader sr = new StreamReader(System.IO.Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Database",
+    selectedPhase + "tournaments.txt")))
+    {
+      string line;
+      while ((line = sr.ReadLine()) != null)
+      {
+        string[] tarr = line.Split(";");
+
+        for (int i = 0; i < tarr.Length; i += 5)
+        {
+          List<string> sublist = new List<string>();
+
+          for (int j = 0; j < 5 && i + j < tarr.Length; j++)
+          {
+            sublist.Add(tarr[i + j]);
+          }
+
+          tournaments.Add(sublist);
+        }
+      }
+    }
+  }
+
+  getTableContents();
 }
 
 <table>
-    <p style="color: white; font-size: 30px; margin-top: 3%;"><b>Предстоящи</b></p>
-    <thead>
-        <tr>
-            <th>Час</th>
-            <th>Дата</th>
-            <th>Терен</th>
-            <th>Победител</th>
-        </tr>
-    </thead>
-    <tbody>
-        @for(int i = 0; i < tournaments.Count() && tournaments[i][0] != "0"; i++){
+  <thead>
+    <tr>
+      <th>№</th>
+      <th>Терен</th>
+      <th>Победител</th>
+    </tr>
+  </thead>
+  <tbody>
 
-            <tr>
+    @for (int i = 0; i < tournaments.Count() && tournaments[i][0] != "0"; i++)
+    {
 
-                @for(int j = 0; j < tournaments[i].Count(); j++){
+      <tr onclick="rowClicked(@i, @selectedPhase)">
 
-                    if(tournaments[i][j] == "0"){
-                      <td>Мир и Дружба</td>
-                    }
-                    else if(tournaments[i][j] == "1"){
-                      <td>Олемаспорт</td>
-                    }
-                    else{
-                      <td>@tournaments[i][j]</td>
-                    }
+        @for (int j = 0; j < tournaments[i].Count(); j++)
+        {
 
-                }
-
-            </tr>
-
-            end_index++;
+          if (j == 0 || j >= 3)
+          {
+            if (j == 4 && tournaments[i][j] == "0")
+            {
+              <td>Предстои</td>
+            }
+            else
+            {
+              <td>@tournaments[i][j]</td>
+            }
+          }
 
         }
-    </tbody>
+
+      </tr>
+
+    }
+  </tbody>
 </table>
 
-<p style="color: white; font-size: 30px; margin-top: 3%;"><b>Минали</b></p>
-
-<table>
-    <thead>
-        <tr>
-            <th>Дата</th>
-            <th>Терен</th>
-            <th>Победител</th>
-        </tr>
-    </thead>
-    <tbody>
-        @for(int i = end_index; i < tournaments.Count(); i++){
-
-            <tr>
-
-                @for(int j = 1; j < tournaments[i].Count(); j++){
-
-                  if(tournaments[i][j] == "0"){
-                    <td>Мир и Дружба</td>
-                  }
-                  else if(tournaments[i][j] == "1"){
-                    <td>Олемаспорт</td>
-                  }
-                  else{
-                    <td>@tournaments[i][j]</td>
-                  }
-
-                }
-
-            </tr>
-
-        }
-    </tbody>
+</tbody>
 </table>

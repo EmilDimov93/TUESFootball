@@ -254,7 +254,7 @@ tr:nth-child(even) {
 
 @media (max-width: 500px) {
   .dropbtn{
-    top: -4.3vh;
+    top: -4.5vh;
   }
 }
 

@@ -31,6 +31,8 @@
   int i1 = 0;
   int i2 = 0;
 
+  string currentTournamentNumber = "";
+
   using (StreamReader sr = new StreamReader(filePath1))
   {
 
@@ -53,6 +55,7 @@
 
       i1 = int.Parse(sLine[1]);
       i2 = int.Parse(sLine[2]);
+      currentTournamentNumber = sLine[0];
     }
 
   }
@@ -92,6 +95,8 @@
     }
   }
 }
+
+<h2 class="table-label">Турнир @currentTournamentNumber<br>Фаза @selectedPhase</h2>
 
 <table>
   <thead>

@@ -239,11 +239,22 @@ tr:nth-child(even) {
     margin-top: 4vh;
     height: 10vw;
   }
+
+  .navbar-nav {
+    justify-content: center; /* Center-align items for smaller screens */
+    gap: 10px; /* Reduce gap for smaller viewports */
+  }
 }
 
 @media (max-width: 750px) {
   .dropbtn{
     top: -4.1vh;
+  }
+}
+
+@media (max-width: 500px) {
+  .dropbtn{
+    top: -4.3vh;
   }
 }
 
@@ -256,11 +267,4 @@ tr:nth-child(even) {
 
 .nav-item {
   white-space: nowrap; /* Prevent text wrapping within items */
-}
-
-@media (max-width: 600px) {
-  .navbar-nav {
-    justify-content: center; /* Center-align items for smaller screens */
-    gap: 10px; /* Reduce gap for smaller viewports */
-  }
 }

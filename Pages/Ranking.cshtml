@@ -7,10 +7,7 @@
 
 @using SharedCode
 
-<p
-  style="border-radius: 40%; background-color: #5c0c15; position: absolute; width: 40%; font-size: calc(3vw + 20%); color: white; text-align: center; margin-top: -3.5%; left: 50%; transform: translate(-50%, -50%);">
-  <b>ГОЛМАЙСТОРИ</b>
-</p>
+<h2 class="table-label">Голмайстори</h2>
 
 @{
 
@@ -27,7 +24,7 @@
 
   if (selectedPhase == 1)
   {
-    <p>Няма статистика за 1-ва фаза</p>
+        <p>Няма статистика за 1-ва фаза</p>
   }
   else
   {
@@ -66,36 +63,46 @@
 
     playerData = playerData.OrderByDescending(p => int.Parse(p[4])).ToList();
 
-    <table>
-      <thead>
-        <tr>
-          <th>Играч</th>
-          <th>Отбор</th>
-          <th>Участия</th>
-          <th>Мачове</th>
-          <th>Голове</th>
-          <th>Ср на мач</th>
-        </tr>
-      </thead>
-      <tbody>
+      <style>
+
+        @@media (max-width: 600px) {
+            table td, table th {
+                font-size: 11px;
+            }
+        }
+
+    </style>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Играч</th>
+              <th>Отбор</th>
+              <th>Участия</th>
+              <th>Мачове</th>
+              <th>Голове</th>
+              <th>Ср на мач</th>
+            </tr>
+          </thead>
+          <tbody>
         @for (int i = 0; i < playerData.Count(); i++)
         {
 
-          <tr>
+                <tr>
 
             @{
               for (int j = 0; j < 6; j++)
               {
-                <td>
+                          <td>
                   @playerData[i][j]
-                </td>
+                          </td>
               }
             }
 
-          </tr>
+                </tr>
 
         }
-      </tbody>
-    </table>
+          </tbody>
+        </table>
   }
 }

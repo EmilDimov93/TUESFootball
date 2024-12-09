@@ -37,7 +37,7 @@ table {
   text-align: center;
   border-collapse: separate;
   border-spacing: 0;
-  margin-top: 2%;
+  margin-top: 3%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -95,7 +95,7 @@ tr:nth-child(even) {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   color: white;
-  padding: 16px;
+  padding: 10px;
   font-size: 16px;
   border: none;
   cursor: pointer;
@@ -107,6 +107,9 @@ tr:nth-child(even) {
   text-align: center;
   text-shadow: 0 0 3px black, 0 0 5px black;
   margin-left: 4vw;
+  position: absolute; /* Position the button absolutely */
+  top: -4.7vh; /* Align it to the bottom of the navbar */
+  width: 12vh;
 }
 
 .dropdown {
@@ -126,21 +129,27 @@ tr:nth-child(even) {
   opacity: 0; /* Start as invisible */
   transition: opacity 0.3s ease, transform 0.3s ease; /* Animation effect */
   transform: translateY(-10px); /* Start with a slight upward position */
+  color: white;
 }
 
 .dropdown-content a {
   background-color: #5c0c15;
-  color: white;
+  color: rgb(255, 255, 255);
   padding: 12px 16px;
   text-decoration: none;
   display: block;
   width: 100%;
   border-radius: 8px; /* Rounded corners for each dropdown item */
   transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  margin-top: 1vh;
+}
+
+.dropdown-content a:first-child {
+  margin-top: 2vh;
 }
 
 .dropdown-content a:hover {
-  background-color: #f1f1f1;
+  background-color: rgb(132, 97, 97);
 }
 
 .dropdown:hover .dropdown-content {
@@ -150,7 +159,7 @@ tr:nth-child(even) {
 }
 
 .dropdown:hover .dropbtn {
-  background-color: #3e8e41;
+  background-color: rgb(132, 97, 97);
 }
 
 .banner {
@@ -194,9 +203,39 @@ tr:nth-child(even) {
   margin-right: auto;
 }
 
+.table-label {
+  color: white;
+  text-align: center;
+  background-color: #5c0c15;
+  width: fit-content;
+  padding-left: 2%;
+  padding-right: 2%;
+  padding-bottom: 0.5%;
+  display: block;
+  margin-left: auto; /* Centers horizontally */
+  margin-right: auto;
+  border-radius: 10px;
+}
+
 @media (max-width: 600px) {
   .view-all-button {
     margin-top: 4vh;
     height: 10vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-collapse {
+    display: flex !important; /* Keep navbar items visible */
+    flex-wrap: nowrap; /* Prevent wrapping of items */
+  }
+  .navbar-toggler {
+    display: none !important; /* Hide the hamburger menu button */
+  }
+}
+
+@media (max-width: 750px) {
+  .dropbtn{
+    top: -4.1vh;
   }
 }

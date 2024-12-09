@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,24 +13,30 @@
     @using System.IO;
     @using SharedCode
 </head>
+
 <body style="background-color: #4682b4;">
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3" style="background-color: #5c0c15; border: black">
+        <nav class="navbar navbar-expand-sm navbar-light border-bottom box-shadow mb-3"
+            style="background-color: #5c0c15; border-color: black;">
             <div class="container">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link" style="color: white;" asp-area="" asp-page="/Index" asp-route-selectedPhase="@SharedFunctions.GetCurrentPhase()"><b>Начало</b></a>
+                <!-- Main navigation items -->
+                <div class="d-flex justify-content-start align-items-center w-100">
+                    <ul class="navbar-nav d-flex flex-row">
+                        <li class="nav-item me-3">
+                            <a class="nav-link" style="color: white; margin-left: 3%;" asp-area="" asp-page="/Index"
+                                asp-route-selectedPhase="@SharedFunctions.GetCurrentPhase()">
+                                <b>Начало</b>
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" style="color: white;" asp-area="" asp-page="/Ranking" asp-route-selectedPhase="@SharedFunctions.GetCurrentPhase()"><b>Голмайстори</b></a>
+                            <a class="nav-link" style="color: white;" asp-area="" asp-page="/Ranking"
+                                asp-route-selectedPhase="@SharedFunctions.GetCurrentPhase()">
+                                <b>Голмайстори</b>
+                            </a>
                         </li>
                     </ul>
-                    <img style="width:5.5vh; height:5vh; margin-right: 3%;" src="https://i.imgur.com/vgSIemK.png">
+                    <img style="width:5.5vh; height:5vh; margin-left: 3%;" src="https://i.imgur.com/vgSIemK.png"
+                        alt="Logo">
                 </div>
             </div>
         </nav>
@@ -62,7 +69,7 @@
             <div class="dropdown-content">
                 @for (int i = 0; i < SharedFunctions.GetCurrentPhase(); i++)
                 {
-                <a style = "color: white" href="#" onclick="changePhase(@(i), '@pageName')">Фаза @(i + 1)</a>
+                    <a style="color: white" href="#" onclick="changePhase(@(i), '@pageName')">Фаза @(i + 1)</a>
                 }
             </div>
         </div>
@@ -83,7 +90,8 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-    
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
+
 </html>

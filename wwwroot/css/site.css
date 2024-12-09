@@ -217,6 +217,23 @@ tr:nth-child(even) {
   border-radius: 10px;
 }
 
+.no-statistics {
+  font-size: 18px; /* Adjust the font size */
+  color: white; /* A soft dark color for readability */
+  text-align: center; /* Center-align the text */
+  margin-top: 5%; /* Add some space from the top */
+  font-weight: bold; /* Make the text bold */
+  font-family: 'Arial', sans-serif; /* Use a clean and modern font */
+  background-color: #333333; /* Slightly transparent background */
+  padding: 10px 20px; /* Add padding for better spacing */
+  border-radius: 8px; /* Rounded corners for a modern feel */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  display: block; /* Wrap the text nicely */
+  margin-left: auto; /* Centers horizontally */
+  margin-right: auto;
+  width: fit-content;
+}
+
 @media (max-width: 600px) {
   .view-all-button {
     margin-top: 4vh;
@@ -224,18 +241,26 @@ tr:nth-child(even) {
   }
 }
 
-@media (max-width: 768px) {
-  .navbar-collapse {
-    display: flex !important; /* Keep navbar items visible */
-    flex-wrap: nowrap; /* Prevent wrapping of items */
-  }
-  .navbar-toggler {
-    display: none !important; /* Hide the hamburger menu button */
-  }
-}
-
 @media (max-width: 750px) {
   .dropbtn{
     top: -4.1vh;
+  }
+}
+
+.navbar-nav {
+  display: flex; /* Enable flexbox for navbar items */
+  justify-content: flex-start; /* Align items horizontally */
+  flex-wrap: nowrap; /* Prevent items from wrapping */
+  gap: 15px; /* Add spacing between items */
+}
+
+.nav-item {
+  white-space: nowrap; /* Prevent text wrapping within items */
+}
+
+@media (max-width: 600px) {
+  .navbar-nav {
+    justify-content: center; /* Center-align items for smaller screens */
+    gap: 10px; /* Reduce gap for smaller viewports */
   }
 }

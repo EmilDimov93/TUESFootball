@@ -79,7 +79,7 @@ table tr:last-child td:last-child {
 }
 
 table tbody tr:hover td {
-  background-color: rgb(132, 97, 97)
+  background-color: rgb(132, 97, 97);
 }
 
 tr:nth-child(odd) {
@@ -107,8 +107,8 @@ tr:nth-child(even) {
   text-align: center;
   text-shadow: 0 0 3px black, 0 0 5px black;
   margin-left: 4vw;
-  position: absolute; /* Position the button absolutely */
-  top: -4.7vh; /* Align it to the bottom of the navbar */
+  position: absolute;
+  top: -4.7vh;
   width: 12vh;
 }
 
@@ -125,10 +125,10 @@ tr:nth-child(even) {
   left: 0;
   padding: 0;
   margin-left: 4vw;
-  border-radius: 8px; /* Rounded corners for the entire dropdown */
-  opacity: 0; /* Start as invisible */
-  transition: opacity 0.3s ease, transform 0.3s ease; /* Animation effect */
-  transform: translateY(-10px); /* Start with a slight upward position */
+  border-radius: 8px;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: translateY(-10px);
   color: white;
 }
 
@@ -139,8 +139,8 @@ tr:nth-child(even) {
   text-decoration: none;
   display: block;
   width: 100%;
-  border-radius: 8px; /* Rounded corners for each dropdown item */
-  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
   margin-top: 1vh;
 }
 
@@ -154,8 +154,8 @@ tr:nth-child(even) {
 
 .dropdown:hover .dropdown-content {
   display: block;
-  opacity: 1; /* Make visible */
-  transform: translateY(0); /* Slide in smoothly */
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .dropdown:hover .dropbtn {
@@ -194,9 +194,8 @@ tr:nth-child(even) {
 }
 
 .index-button-container {
-  display: flex; 
-  gap: 10px;
   display: flex;
+  gap: 10px;
   justify-content: center;
   position: relative;
   margin-left: auto;
@@ -212,24 +211,24 @@ tr:nth-child(even) {
   padding-right: 2%;
   padding-bottom: 0.5%;
   display: block;
-  margin-left: auto; /* Centers horizontally */
+  margin-left: auto;
   margin-right: auto;
   border-radius: 10px;
 }
 
 .no-statistics {
-  font-size: 18px; /* Adjust the font size */
-  color: white; /* A soft dark color for readability */
-  text-align: center; /* Center-align the text */
-  margin-top: 5%; /* Add some space from the top */
-  font-weight: bold; /* Make the text bold */
-  font-family: 'Arial', sans-serif; /* Use a clean and modern font */
-  background-color: #333333; /* Slightly transparent background */
-  padding: 10px 20px; /* Add padding for better spacing */
-  border-radius: 8px; /* Rounded corners for a modern feel */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  display: block; /* Wrap the text nicely */
-  margin-left: auto; /* Centers horizontally */
+  font-size: 18px;
+  color: white;
+  text-align: center;
+  margin-top: 5%;
+  font-weight: bold;
+  font-family: 'Arial', sans-serif;
+  background-color: #333333;
+  padding: 10px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: block;
+  margin-left: auto;
   margin-right: auto;
   width: fit-content;
 }
@@ -241,30 +240,34 @@ tr:nth-child(even) {
   }
 
   .navbar-nav {
-    justify-content: center; /* Center-align items for smaller screens */
-    gap: 10px; /* Reduce gap for smaller viewports */
+    justify-content: center;
+    gap: 10px;
   }
 }
 
 @media (max-width: 750px) {
-  .dropbtn{
+  .dropbtn {
     top: -4.1vh;
   }
 }
 
 @media (max-width: 500px) {
-  .dropbtn{
+  .dropbtn {
     top: -4.5vh;
+    border-style: solid;
+  }
+  .dropdown-content a {
+    margin-top: 0vh;
   }
 }
 
 .navbar-nav {
-  display: flex; /* Enable flexbox for navbar items */
-  justify-content: flex-start; /* Align items horizontally */
-  flex-wrap: nowrap; /* Prevent items from wrapping */
-  gap: 15px; /* Add spacing between items */
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 15px;
 }
 
 .nav-item {
-  white-space: nowrap; /* Prevent text wrapping within items */
+  white-space: nowrap;
 }

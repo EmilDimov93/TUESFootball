@@ -49,6 +49,10 @@
       "PackagePath": "staticwebassets\\Database\\Prev\\tournaments.txt"
     },
     {
+      "Id": "C:\\Code\\Football\\wwwroot\\Database\\RefreshTable.py",
+      "PackagePath": "staticwebassets\\Database\\RefreshTable.py"
+    },
+    {
       "Id": "C:\\Code\\Football\\wwwroot\\Database\\currentPhase.txt",
       "PackagePath": "staticwebassets\\Database\\currentPhase.txt"
     },

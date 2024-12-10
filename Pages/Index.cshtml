@@ -38,12 +38,12 @@
             break;
         }
 
-        for (int i = 0; i < tarr.Length; i += 11)
+        for (int i = 0; i < tarr.Length; i += 10)
         {
 
             List<string> sublist = new List<string>();
 
-            for (int j = 0; j < 11 && i + j < tarr.Length; j++)
+            for (int j = 0; j < 10 && i + j < tarr.Length; j++)
             {
                 sublist.Add(tarr[i + j]);
             }
@@ -78,7 +78,6 @@
             <tr>
                 <th>№</th>
                 <th>Отб</th>
-                <th>Уч</th>
                 <th>М</th>
                 <th>П</th>
                 <th>З</th>

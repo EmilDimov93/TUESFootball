@@ -4,7 +4,8 @@ namespace SharedCode
 {
     public static class SharedFunctions
     {
-        public static int GetCurrentPhase(){
+        public static int GetCurrentPhase()
+        {
 
             var filePath = System.IO.Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Database", "currentPhase.txt");
 

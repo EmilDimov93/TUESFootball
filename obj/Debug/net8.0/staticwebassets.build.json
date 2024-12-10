@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "bJNQ8BkUEjTAOhkItrzCaJ8dA6sBFevpNUy9x1b6mmA=",
+  "Hash": "kj8tcuyOQ7BnztUtS25yjRQeKlJymG5z4oz3bbKLO20=",
   "Source": "Football",
   "BasePath": "_content/Football",
   "Mode": "Default",
@@ -300,6 +300,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Database\\Prev\\tournaments.txt"
+    },
+    {
+      "Identity": "C:\\Code\\Football\\wwwroot\\Database\\RefreshTable.py",
+      "SourceId": "Football",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Code\\Football\\wwwroot\\",
+      "BasePath": "_content/Football",
+      "RelativePath": "Database/RefreshTable.py",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Database\\RefreshTable.py"
     },
     {
       "Identity": "C:\\Code\\Football\\wwwroot\\download.png",

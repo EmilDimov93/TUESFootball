@@ -6,7 +6,7 @@ def findRow(teamName, content):
             content[i][0] = teamName
             content.append(["0"] * 10)
             return i
-    raise ValueError(f"Row for team '{teamName}' could not be found or added.")  # Safety check
+    raise ValueError(f"Row for team '{teamName}' could not be found or added.")
 
 def RefreshTable(phase):
     content = [["0"] * 10 for _ in range(1)]
@@ -15,10 +15,10 @@ def RefreshTable(phase):
         with open(str(phase) + 'matches.txt', 'r', encoding='utf-8') as file:
             for line in file:
                 if not line.strip():
-                    continue  # Skip empty lines
+                    continue
                 match = line.strip().split(';')
                 
-                if len(match) < 5:  # Ensure the match data has enough fields
+                if len(match) < 5:
                     raise ValueError(f"Invalid match data: {line.strip()}")
 
                 try:
@@ -31,7 +31,6 @@ def RefreshTable(phase):
                 if not match[2].isdigit() or not match[3].isdigit():
                     raise ValueError(f"Invalid score data: {match[2]} or {match[3]} is not a number.")
                 
-                # Ensure integer conversion does not fail
                 score1 = int(match[2])
                 score2 = int(match[3])
 

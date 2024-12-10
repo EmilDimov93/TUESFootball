@@ -90,6 +90,11 @@ tr:nth-child(even) {
   background-color: #5b252b;
 }
 
+tr:first-child .arrows-tournaments {
+  border-top: 2px solid white;
+  border-top-right-radius: 10px;
+}
+
 .dropbtn {
   background-color: #5c0c15;
   border-bottom-left-radius: 10px;

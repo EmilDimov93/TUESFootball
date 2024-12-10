@@ -64,7 +64,7 @@
     @for (int i = 0; i < tournaments.Count() && tournaments[i][0] != "0"; i++)
     {
 
-      <tr onclick="rowClicked(@i, @selectedPhase)">
+      <tr onclick="rowClicked(@i, @selectedPhase)" style="cursor: pointer;">
 
         @for (int j = 0; j < tournaments[i].Count(); j++)
         {
@@ -82,6 +82,8 @@
           }
 
         }
+
+        <td class="arrows-tournaments">&rarr;</td>
 
       </tr>
 

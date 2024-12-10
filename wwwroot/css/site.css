@@ -142,6 +142,8 @@ tr:nth-child(even) {
   border-radius: 8px;
   transition: background-color 0.3s ease;
   margin-top: 1vh;
+  border-style: solid;
+  border-color: white;
 }
 
 .dropdown-content a:first-child {

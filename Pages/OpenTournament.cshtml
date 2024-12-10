@@ -36,7 +36,7 @@
   using (StreamReader sr = new StreamReader(filePath1))
   {
 
-    string tLine = null;
+    string? tLine = null;
 
     for (int currentLine = 1; currentLine <= selectedRow; currentLine++)
     {
@@ -67,7 +67,7 @@
 
   using (StreamReader sr = new StreamReader(filePath2))
   {
-    string line;
+    string? line;
     while ((line = sr.ReadLine()) != null)
     {
       string[] tarr = line.Split(";");

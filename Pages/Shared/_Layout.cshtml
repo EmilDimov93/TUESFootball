@@ -58,7 +58,7 @@
             selectedPhase = @SharedFunctions.GetCurrentPhase();
         }
 
-        var currentPage = Context.Request.Path.Value.ToLower();
+        var currentPage = Context.Request.Path.Value?.ToLower() ?? string.Empty;
         var hideButtonPage = "/opentournament";
     }
 

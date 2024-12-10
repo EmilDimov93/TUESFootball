@@ -12,7 +12,15 @@ namespace SharedCode
             using (StreamReader sr = new StreamReader(filePath))
             {
 
-                return int.Parse(sr.ReadLine());
+                string? line = sr.ReadLine();
+                if (int.TryParse(line, out int result))
+                {
+                    return result;
+                }
+                else
+                {
+                    throw new InvalidOperationException("The file is empty, the line is null, or it does not contain a valid integer.");
+                }
 
             }
         }

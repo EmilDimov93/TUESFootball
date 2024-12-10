@@ -26,7 +26,7 @@
     using (StreamReader sr = new StreamReader(System.IO.Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Database",
     selectedPhase + "tournaments.txt")))
     {
-      string line;
+      string? line;
       while ((line = sr.ReadLine()) != null)
       {
         string[] tarr = line.Split(";");

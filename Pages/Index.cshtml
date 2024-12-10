@@ -21,13 +21,13 @@
     else
     {
         selectedPhase = @SharedFunctions.GetCurrentPhase();
-    }////////////////////////////////////////////////////////////have it everywhere
+    }
 
     StreamReader sr = new StreamReader(System.IO.Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Database", selectedPhase + "table.txt"));
 
     List<List<string>> content = new List<List<string>>();
 
-    String line;
+    string? line;
 
     while ((line = sr.ReadLine()) != null)
     {
@@ -67,7 +67,7 @@
 
 <body>
 
-    <img src="/download.png" alt="Soccer Fans Celebrating" class="banner">
+    <img src="/index_banner.png" alt="Soccer Fans Celebrating" class="banner">
 
     <button type="button" class="view-all-button"
         onclick="location.href='/Tournaments?selectedPhase=@selectedPhase'"><u>Всички

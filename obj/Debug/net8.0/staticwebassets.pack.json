@@ -33,22 +33,6 @@
       "PackagePath": "staticwebassets\\Database\\2tournaments.txt"
     },
     {
-      "Id": "C:\\Code\\Football\\wwwroot\\Database\\Prev\\league_matches.txt",
-      "PackagePath": "staticwebassets\\Database\\Prev\\league_matches.txt"
-    },
-    {
-      "Id": "C:\\Code\\Football\\wwwroot\\Database\\Prev\\league_teams.txt",
-      "PackagePath": "staticwebassets\\Database\\Prev\\league_teams.txt"
-    },
-    {
-      "Id": "C:\\Code\\Football\\wwwroot\\Database\\Prev\\players.txt",
-      "PackagePath": "staticwebassets\\Database\\Prev\\players.txt"
-    },
-    {
-      "Id": "C:\\Code\\Football\\wwwroot\\Database\\Prev\\tournaments.txt",
-      "PackagePath": "staticwebassets\\Database\\Prev\\tournaments.txt"
-    },
-    {
       "Id": "C:\\Code\\Football\\wwwroot\\Database\\RefreshTable.py",
       "PackagePath": "staticwebassets\\Database\\RefreshTable.py"
     },
@@ -61,20 +45,12 @@
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "C:\\Code\\Football\\wwwroot\\download.png",
-      "PackagePath": "staticwebassets\\download.png"
-    },
-    {
       "Id": "C:\\Code\\Football\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Code\\Football\\wwwroot\\image.png",
-      "PackagePath": "staticwebassets\\image.png"
-    },
-    {
-      "Id": "C:\\Code\\Football\\wwwroot\\image1.png",
-      "PackagePath": "staticwebassets\\image1.png"
+      "Id": "C:\\Code\\Football\\wwwroot\\index_banner.png",
+      "PackagePath": "staticwebassets\\index_banner.png"
     },
     {
       "Id": "C:\\Code\\Football\\wwwroot\\js\\site.js",

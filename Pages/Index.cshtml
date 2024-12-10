@@ -23,7 +23,7 @@
         selectedPhase = @SharedFunctions.GetCurrentPhase();
     }
 
-    StreamReader sr = new StreamReader(System.IO.Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Database", selectedPhase + "table.txt"));
+    using var sr = new StreamReader(System.IO.Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Database", selectedPhase + "table.txt"));
 
     List<List<string>> content = new List<List<string>>();
 

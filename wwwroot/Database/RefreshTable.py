@@ -1,3 +1,5 @@
+import math
+
 def findRow(teamName, content):
     for i in range(len(content)):
         if content[i][0] == teamName:
@@ -60,8 +62,8 @@ def RefreshTable(phase):
                 content[t1Row][7] = str(int(content[t1Row][5]) - int(content[t1Row][6]))  # Раз
                 content[t2Row][7] = str(int(content[t2Row][5]) - int(content[t2Row][6]))  # Раз
 
-                content[t1Row][9] = str(round(int(content[t1Row][8]) / int(content[t1Row][1]), 3) if int(content[t1Row][1]) > 0 else 0)  # Коефициент
-                content[t2Row][9] = str(round(int(content[t2Row][8]) / int(content[t2Row][1]), 3) if int(content[t2Row][1]) > 0 else 0)  # Коефициент
+                content[t1Row][9] = (f"{math.ceil((int(content[t1Row][8]) / int(content[t1Row][1])) * 1000) / 1000:.3f}" if int(content[t1Row][1]) > 0 else "0.000")  # Коефициент
+                content[t2Row][9] = (f"{math.ceil((int(content[t2Row][8]) / int(content[t2Row][1])) * 1000) / 1000:.3f}" if int(content[t2Row][1]) > 0 else "0.000")  # Коефициент
 
         content = sorted(content, key=lambda x: float(x[9]) if x[9] != "0" else 0, reverse=True)
 

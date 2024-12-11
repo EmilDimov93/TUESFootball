@@ -123,7 +123,6 @@ tr:first-child .arrows-tournaments {
 }
 
 .dropdown-content {
-  display: none;
   position: absolute;
   min-width: 80px;
   z-index: 1;
@@ -136,6 +135,10 @@ tr:first-child .arrows-tournaments {
   transform: translateY(-10px);
   color: white;
   padding-top: 2vh;
+  opacity: 0;
+  transform: translateY(-10px);
+  visibility: hidden;
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
 }
 
 .dropdown-content a {
@@ -157,13 +160,14 @@ tr:first-child .arrows-tournaments {
 }
 
 .dropdown-content a:hover {
-  background-color: rgb(132, 97, 97);
+  background-color: rgb(59, 59, 59);
 }
 
 .dropdown:hover .dropdown-content {
   display: block;
   opacity: 1;
   transform: translateY(0);
+  visibility: visible;
 }
 
 .dropdown:hover .dropbtn {
@@ -257,6 +261,7 @@ tr:first-child .arrows-tournaments {
   .dropbtn {
     top: -4.1vh;
   }
+
   .banner {
     display: none;
   }
@@ -266,11 +271,13 @@ tr:first-child .arrows-tournaments {
   .dropbtn {
     top: -4.5vh;
   }
+
   .dropdown-content a {
     margin-top: 0.5vh;
     border-width: 1.5px;
     box-sizing: border-box;
   }
+
   .dropdown-content a:first-child {
     margin-top: 1vh;
   }

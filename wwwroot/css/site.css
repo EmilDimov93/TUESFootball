@@ -256,6 +256,9 @@ tr:first-child .arrows-tournaments {
   .dropbtn {
     top: -4.1vh;
   }
+  .banner {
+    display: none;
+  }
 }
 
 @media (max-width: 500px) {

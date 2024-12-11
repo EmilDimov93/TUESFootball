@@ -64,11 +64,30 @@
         var hideButtonPage = "/opentournament";
     }
 
+    <script>
+        // Get the dropdown button and content elements
+    const dropdownButton = document.getElementById("phaseButton");
+    const dropdownContent = document.getElementById("dropdownContent");
+
+    // Add a click event listener to the button
+    dropdownButton.addEventListener("click", () => {
+    // Toggle the "show" class to show/hide the dropdown
+    dropdownContent.classList.toggle("show");
+    });
+
+    // Close the dropdown if clicking outside it
+    document.addEventListener("click", (event) => {
+    if (!dropdownButton.contains(event.target) && !dropdownContent.contains(event.target)) {
+        dropdownContent.classList.remove("show");
+    }
+    });
+    </script>
+
     @if (!currentPage.Contains(hideButtonPage.ToLower()))
     {
         <div class="dropdown">
             <button id="phaseButton" class="dropbtn">Фаза @selectedPhase</button>
-            <div class="dropdown-content">
+            <div id="dropdownContent" class="dropdown-content">
                 @for (int i = 0; i < SharedFunctions.GetCurrentPhase(); i++)
                 {
                     <a style="color: white" href="#" onclick="changePhase(@(i), '@pageName')">Фаза @(i + 1)</a>

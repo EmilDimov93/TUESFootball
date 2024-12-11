@@ -65,7 +65,7 @@ def RefreshTable(phase):
                 content[t1Row][9] = (f"{math.ceil((int(content[t1Row][8]) / int(content[t1Row][1])) * 1000) / 1000:.3f}" if int(content[t1Row][1]) > 0 else "0.000")  # Коефициент
                 content[t2Row][9] = (f"{math.ceil((int(content[t2Row][8]) / int(content[t2Row][1])) * 1000) / 1000:.3f}" if int(content[t2Row][1]) > 0 else "0.000")  # Коефициент
 
-        content = sorted(content, key=lambda x: float(x[9]) if x[9] != "0" else 0, reverse=True)
+        content = sorted(content, key=lambda x: float(x[8]) if x[8] != "0" else 0, reverse=True)
 
         with open(str(phase) + 'table.txt', 'w', encoding='utf-8') as file:
             for sublist in content:

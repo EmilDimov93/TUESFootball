@@ -138,7 +138,7 @@ tr:first-child .arrows-tournaments {
   opacity: 0;
   transform: translateY(-10px);
   visibility: hidden;
-  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out, visibility 0.3s ease-out;
 }
 
 .dropdown-content a {
@@ -156,7 +156,7 @@ tr:first-child .arrows-tournaments {
 }
 
 .dropdown-content a:first-child {
-  margin-top: 2vh;
+  margin-top: 1vh;
 }
 
 .dropdown-content a:hover {
@@ -172,6 +172,12 @@ tr:first-child .arrows-tournaments {
 
 .dropdown:hover .dropbtn {
   background-color: rgb(132, 97, 97);
+}
+
+.dropdown-content.show {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
 }
 
 .banner {

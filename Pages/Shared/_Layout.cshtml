@@ -65,17 +65,18 @@
     }
 
     <script>
-        // Get the dropdown button and content elements
     const dropdownButton = document.getElementById("phaseButton");
     const dropdownContent = document.getElementById("dropdownContent");
 
-    // Add a click event listener to the button
-    dropdownButton.addEventListener("click", () => {
-    // Toggle the "show" class to show/hide the dropdown
+    dropdownButton.addEventListener("click", (event) => {
+    // Prevents the click event from propagating to the document
+    event.stopPropagation();
+
+    // Toggle the 'show' class on the dropdown content
     dropdownContent.classList.toggle("show");
     });
 
-    // Close the dropdown if clicking outside it
+    // Close the dropdown if clicking outside
     document.addEventListener("click", (event) => {
     if (!dropdownButton.contains(event.target) && !dropdownContent.contains(event.target)) {
         dropdownContent.classList.remove("show");

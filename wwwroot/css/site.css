@@ -135,10 +135,11 @@ tr:first-child .arrows-tournaments {
   transition: opacity 0.3s ease, transform 0.3s ease;
   transform: translateY(-10px);
   color: white;
+  padding-top: 2vh;
 }
 
 .dropdown-content a {
-  background-color: #5c0c15;
+  background-color: black;
   color: rgb(255, 255, 255);
   padding: 8px 8px;
   text-decoration: none;
@@ -268,6 +269,10 @@ tr:first-child .arrows-tournaments {
   .dropdown-content a {
     margin-top: 0.5vh;
     border-width: 1.5px;
+    box-sizing: border-box;
+  }
+  .dropdown-content a:first-child {
+    margin-top: 1vh;
   }
 }
 

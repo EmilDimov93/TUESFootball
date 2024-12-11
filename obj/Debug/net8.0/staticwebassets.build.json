@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "4Putosp0GoCwBlPJPc8jwMBs1mi75xOT+PWvAuGGYpk=",
+  "Hash": "NDUa15vcIP0eAd4dgqL5Et/Ol41PwN2mkGrj1wTzhtc=",
   "Source": "Football",
   "BasePath": "_content/Football",
   "Mode": "Default",
@@ -262,6 +262,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Code\\Football\\wwwroot\\favicon1.ico",
+      "SourceId": "Football",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Code\\Football\\wwwroot\\",
+      "BasePath": "_content/Football",
+      "RelativePath": "favicon1.ico",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\favicon1.ico"
     },
     {
       "Identity": "C:\\Code\\Football\\wwwroot\\index_banner.png",

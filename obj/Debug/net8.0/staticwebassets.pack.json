@@ -49,6 +49,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Code\\Football\\wwwroot\\favicon1.ico",
+      "PackagePath": "staticwebassets\\favicon1.ico"
+    },
+    {
       "Id": "C:\\Code\\Football\\wwwroot\\index_banner.png",
       "PackagePath": "staticwebassets\\index_banner.png"
     },

@@ -57,6 +57,18 @@
       "PackagePath": "staticwebassets\\index_banner.png"
     },
     {
+      "Id": "C:\\Code\\Football\\wwwroot\\index_banner1.png",
+      "PackagePath": "staticwebassets\\index_banner1.png"
+    },
+    {
+      "Id": "C:\\Code\\Football\\wwwroot\\index_banner2.png",
+      "PackagePath": "staticwebassets\\index_banner2.png"
+    },
+    {
+      "Id": "C:\\Code\\Football\\wwwroot\\index_banner3.png",
+      "PackagePath": "staticwebassets\\index_banner3.png"
+    },
+    {
       "Id": "C:\\Code\\Football\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

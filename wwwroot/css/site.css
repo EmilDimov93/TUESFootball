@@ -1,11 +1,9 @@
-html {
-  font-size: 14px;
+:root {
+  --bordeaux: #5c0c15;
 }
 
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+html {
+  font-size: 14px;
 }
 
 .btn:focus,
@@ -37,13 +35,14 @@ table {
   text-align: center;
   border-collapse: separate;
   border-spacing: 0;
-  margin-top: 3%;
+  margin-top: 5%;
   margin-left: auto;
   margin-right: auto;
 }
 
 th {
   height: 70px;
+  background-color: black;
 }
 
 th,
@@ -79,15 +78,15 @@ table tr:last-child td:last-child {
 }
 
 table tbody tr:hover td {
-  background-color: rgb(132, 97, 97);
+  background-color: rgba(132, 97, 97, 0.3);
 }
 
 tr:nth-child(odd) {
-  background-color: #5c0c15;
+  background-color: var(--bordeaux);
 }
 
 tr:nth-child(even) {
-  background-color: #5b252b;
+  background-color: #5c0c15BB;
 }
 
 tr:first-child .arrows-tournaments {
@@ -96,7 +95,7 @@ tr:first-child .arrows-tournaments {
 }
 
 .dropbtn {
-  background-color: #5c0c15;
+  background-color: var(--bordeaux);
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   color: white;
@@ -182,18 +181,18 @@ tr:first-child .arrows-tournaments {
 
 .banner {
   position: fixed;
-  top: 8vh;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 100vw;
-  height: auto;
+  height: 100vh;
   min-width: 0vw;
   min-height: 0vh;
   z-index: -1;
+  place-items: center;
+  top: 50%;
 }
 
 .view-all-button {
-  background-color: #5c0c15;
+  background-color: var(--bordeaux);
   border-radius: 10px;
   padding: 1vh;
   border-color: white;
@@ -207,7 +206,7 @@ tr:first-child .arrows-tournaments {
   margin-right: auto;
   display: block;
   width: 50vw;
-  margin-top: 7vh;
+  margin-top: 3vh;
   height: 5vw;
 }
 
@@ -223,7 +222,7 @@ tr:first-child .arrows-tournaments {
 .table-label {
   color: white;
   text-align: center;
-  background-color: #5c0c15;
+  background-color: var(--bordeaux);
   width: fit-content;
   padding-left: 4%;
   padding-right: 4%;
@@ -251,26 +250,15 @@ tr:first-child .arrows-tournaments {
   width: fit-content;
 }
 
-@media (max-width: 600px) {
-  .view-all-button {
-    margin-top: 4vh;
-    height: 10vw;
-  }
-
-  .navbar-nav {
-    justify-content: center;
-    gap: 10px;
-  }
+.navbar-nav {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 15px;
 }
 
-@media (max-width: 750px) {
-  .dropbtn {
-    top: -4.1vh;
-  }
-
-  .banner {
-    display: none;
-  }
+.nav-item {
+  white-space: nowrap;
 }
 
 @media (max-width: 500px) {
@@ -289,13 +277,33 @@ tr:first-child .arrows-tournaments {
   }
 }
 
-.navbar-nav {
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: nowrap;
-  gap: 15px;
+@media (max-width: 600px) {
+  .view-all-button {
+    margin-top: 4vh;
+    height: 10vw;
+  }
+
+  .navbar-nav {
+    justify-content: center;
+    gap: 10px;
+  }
 }
 
-.nav-item {
-  white-space: nowrap;
+@media (max-width: 750px) {
+  .dropbtn {
+    top: -4.1vh;
+  }
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .banner {
+    height: auto;
+    width: 100vw;
+  }
 }

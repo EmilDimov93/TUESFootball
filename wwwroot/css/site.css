@@ -308,7 +308,7 @@ tr:first-child .arrows-tournaments {
   }
 }
 
-@media only screen and (orientation: landscape) {
+@media only screen and (max-width: 768px) and (orientation: landscape) {
   body {
       display: none; /* Hides the content when in landscape mode */
   }

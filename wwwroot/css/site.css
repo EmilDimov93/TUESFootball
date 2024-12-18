@@ -122,7 +122,7 @@ tr:first-child .arrows-tournaments {
 }
 
 .dropdown-content {
-  position: absolute;
+  position: fixed;
   min-width: 80px;
   z-index: 1;
   left: 0;

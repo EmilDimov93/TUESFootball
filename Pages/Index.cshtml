@@ -14,16 +14,17 @@
 
     int selectedPhase = 0;
 
-    if (Request.Query["selectedPhase"].Count > 0)
+    if (Request.Query["phase"].Count > 0)
     {
-        int.TryParse(Request.Query["selectedPhase"], out selectedPhase);
+        int.TryParse(Request.Query["phase"], out selectedPhase);
     }
     else
     {
         selectedPhase = @SharedFunctions.GetCurrentPhase();
     }
 
-    using var sr = new StreamReader(System.IO.Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Database", selectedPhase + "table.txt"));
+    using var sr = new StreamReader(System.IO.Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Database",
+    selectedPhase + "table.txt"));
 
     List<List<string>> content = new List<List<string>>();
 
@@ -56,19 +57,19 @@
 }
 
 <style>
-
     @@media (max-width: 600px) {
-        table td, table th {
+
+        table td,
+        table th {
             font-size: 9px;
         }
     }
-
 </style>
 
 <body>
 
     <button type="button" class="view-all-button"
-        onclick="location.href='/Tournaments?selectedPhase=@selectedPhase'"><u>Всички
+        onclick="location.href='/Tournaments?phase=@selectedPhase'"><u>Всички
             турнири</u>&rarr;</button>
 
     <table>

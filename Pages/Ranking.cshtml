@@ -13,9 +13,9 @@
 
   int selectedPhase = 0;
 
-  if (Request.Query["selectedPhase"].Count > 0)
+  if (Request.Query["phase"].Count > 0)
   {
-    int.TryParse(Request.Query["selectedPhase"], out selectedPhase);
+    int.TryParse(Request.Query["phase"], out selectedPhase);
   }
   else
   {
@@ -24,7 +24,7 @@
 
   if (selectedPhase == 1)
   {
-        <p class="no-statistics">Няма статистика за 1-ва фаза</p>
+    <p class="no-statistics">Няма статистика за 1-ва фаза</p>
   }
   else
   {
@@ -63,46 +63,46 @@
 
     playerData = playerData.OrderByDescending(p => int.Parse(p[4])).ToList();
 
-      <style>
+    <style>
+      @@media (max-width: 600px) {
 
-        @@media (max-width: 600px) {
-            table td, table th {
-                font-size: 11px;
-            }
+        table td,
+        table th {
+          font-size: 11px;
         }
-
+      }
     </style>
 
-        <table>
-          <thead>
-            <tr>
-              <th>Играч</th>
-              <th>Отбор</th>
-              <th>Участия</th>
-              <th>Мачове</th>
-              <th>Голове</th>
-              <th>Ср на мач</th>
-            </tr>
-          </thead>
-          <tbody>
+    <table>
+      <thead>
+        <tr>
+          <th>Играч</th>
+          <th>Отбор</th>
+          <th>Участия</th>
+          <th>Мачове</th>
+          <th>Голове</th>
+          <th>Ср на мач</th>
+        </tr>
+      </thead>
+      <tbody>
         @for (int i = 0; i < playerData.Count(); i++)
         {
 
-                <tr>
+          <tr>
 
             @{
               for (int j = 0; j < 6; j++)
               {
-                          <td>
+                <td>
                   @playerData[i][j]
-                          </td>
+                </td>
               }
             }
 
-                </tr>
+          </tr>
 
         }
-          </tbody>
-        </table>
+      </tbody>
+    </table>
   }
 }

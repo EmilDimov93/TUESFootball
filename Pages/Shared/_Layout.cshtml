@@ -8,18 +8,17 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Football.styles.css" asp-append-version="true" />
-    <link rel="shortcut icon" type="image/x-ico" href="~/favicon1.ico" />
+    <link rel="shortcut icon" type="image/x-ico" href="~/favicon.ico" />
     @using System;
     @using System.IO;
     @using SharedCode
 </head>
 
-<body style="background-color: #4682b4;"><!--#4682b4-->
+<body style="background-color: #4682b4;">
     <header>
         <nav class="navbar navbar-expand-sm navbar-light border-bottom box-shadow mb-3"
             style="background-color: #5c0c15; border-color: black;">
             <div class="container">
-                <!-- Main navigation items -->
                 <div class="d-flex justify-content-start align-items-center w-100">
                     <ul class="navbar-nav d-flex flex-row">
                         <li class="nav-item me-3">
@@ -35,10 +34,10 @@
                             </a>
                         </li>
                     </ul>
-                    <img class="ms-auto" style="width:5.5vh; height:5vh; margin-right: 3%;" src="https://i.imgur.com/plnQREc.png"
-                        alt="Logo">
+                    <img class="ms-auto" style="width:5.5vh; height:5vh; margin-right: 3%;"
+                        src="https://i.imgur.com/plnQREc.png" alt="Logo">
 
-                    <img src="/index_banner3.png" alt="Soccer Fans Celebrating" class="banner">
+                    <img src="/index_banner.png" alt="Soccer Fans Celebrating" class="banner">
                 </div>
             </div>
         </nav>
@@ -47,13 +46,13 @@
     @{
         int selectedPhase = 0;
 
-        var viewPath = ViewContext.View.Path; // Example: "/Views/Home/Index.cshtml"
-        var viewName = viewPath.Substring(viewPath.LastIndexOf("/") + 1); // Extract "Home/Index.cshtml"
-        var pageName = "/" + System.IO.Path.GetFileNameWithoutExtension(viewName); // Extract "/Index"
+        var viewPath = ViewContext.View.Path;
+        var viewName = viewPath.Substring(viewPath.LastIndexOf("/") + 1);
+        var pageName = "/" + System.IO.Path.GetFileNameWithoutExtension(viewName);
 
-        if (@Context.Request.Query["selectedPhase"].Count > 0)
+        if (@Context.Request.Query["phase"].Count > 0)
         {
-            int.TryParse(@Context.Request.Query["selectedPhase"], out selectedPhase);
+            int.TryParse(@Context.Request.Query["phase"], out selectedPhase);
         }
         else
         {
@@ -69,23 +68,20 @@
     </div>
 
     <script>
-    const dropdownButton = document.getElementById("phaseButton");
-    const dropdownContent = document.getElementById("dropdownContent");
+        const dropdownButton = document.getElementById("phaseButton");
+        const dropdownContent = document.getElementById("dropdownContent");
 
-    dropdownButton.addEventListener("click", (event) => {
-    // Prevents the click event from propagating to the document
-    event.stopPropagation();
+        dropdownButton.addEventListener("click", (event) => {
+            event.stopPropagation();
 
-    // Toggle the 'show' class on the dropdown content
-    dropdownContent.classList.toggle("show");
-    });
+            dropdownContent.classList.toggle("show");
+        });
 
-    // Close the dropdown if clicking outside
-    document.addEventListener("click", (event) => {
-    if (!dropdownButton.contains(event.target) && !dropdownContent.contains(event.target)) {
-        dropdownContent.classList.remove("show");
-    }
-    });
+        document.addEventListener("click", (event) => {
+            if (!dropdownButton.contains(event.target) && !dropdownContent.contains(event.target)) {
+                dropdownContent.classList.remove("show");
+            }
+        });
     </script>
 
     @if (!currentPage.Contains(hideButtonPage.ToLower()))

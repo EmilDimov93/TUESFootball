@@ -18,9 +18,9 @@
 
   int selectedPhase = 0;
 
-  if (Request.Query["selectedPhase"].Count > 0)
+  if (Request.Query["phase"].Count > 0)
   {
-    int.TryParse(Request.Query["selectedPhase"], out selectedPhase);
+    int.TryParse(Request.Query["phase"], out selectedPhase);
   }
 
   selectedRow++;

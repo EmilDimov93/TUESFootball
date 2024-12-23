@@ -5,10 +5,10 @@
 
 function changePhase(newPhase, currentPage) {
     selectedPhase = newPhase + 1;
-    console.log(currentPage + '/?selectedPhase=' + selectedPhase);
-    window.location.href = currentPage + '/?selectedPhase=' + selectedPhase;
+    console.log(currentPage + '/?phase=' + selectedPhase);
+    window.location.href = currentPage + '/?phase=' + selectedPhase;
 }
 
 function rowClicked(rowNumber, selectedPhase) {
-    window.location.href = '/OpenTournament?row=' + rowNumber + '&selectedPhase=' + selectedPhase;
+    window.location.href = '/OpenTournament?row=' + rowNumber + '&phase=' + selectedPhase;
 }

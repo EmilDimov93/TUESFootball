@@ -279,7 +279,7 @@ tr:first-child .arrows-tournaments {
 
 @media (max-height: 700px) {
   .dropbtn {
-    width: 16vw;
+    width: 20vw;
   }
 }
 
@@ -297,7 +297,7 @@ tr:first-child .arrows-tournaments {
 
 @media (max-width: 750px) {
   .dropbtn {
-    top: -6.4vw;
+    top: -31px;
   }
 }
 

@@ -277,6 +277,12 @@ tr:first-child .arrows-tournaments {
   }
 }
 
+@media (max-height: 700px) {
+  .dropbtn {
+    width: 16vw;
+  }
+}
+
 @media (max-width: 600px) {
   .view-all-button {
     margin-top: 4vh;
@@ -291,7 +297,7 @@ tr:first-child .arrows-tournaments {
 
 @media (max-width: 750px) {
   .dropbtn {
-    top: -4.5vh;
+    top: -6.4vw;
   }
 }
 

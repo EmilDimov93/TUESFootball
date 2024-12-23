@@ -63,10 +63,6 @@
         var hideButtonPage = "/opentournament";
     }
 
-    <div class="landscape-message" style="display:none; font-size: 50px;">
-        <p>Моля, върнете се в portrait mode.</p>
-    </div>
-
     <script>
         const dropdownButton = document.getElementById("phaseButton");
         const dropdownContent = document.getElementById("dropdownContent");
@@ -115,5 +111,9 @@
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>
+
+<div class="landscape-message">
+    <p>Моля, върнете се в portrait mode.</p>
+</div>
 
 </html>

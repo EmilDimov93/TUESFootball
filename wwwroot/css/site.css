@@ -261,6 +261,11 @@ tr:first-child .arrows-tournaments {
   white-space: nowrap;
 }
 
+.landscape-message {
+  display:none;
+  font-size: 30px;
+}
+
 @media (max-width: 500px) {
   .dropbtn {
     top: -4.5vh;
@@ -315,12 +320,20 @@ tr:first-child .arrows-tournaments {
 }
 
 @media only screen and (max-width: 768px) and (orientation: landscape) {
-  body {
+  body > *  {
     display: none;
+  }
+
+  body {
+    background-color: white;
   }
 
   .landscape-message {
     display: block;
+  }
+
+  .dropbtn {
+    display: none;
   }
 }
 

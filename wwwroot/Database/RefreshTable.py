@@ -110,9 +110,17 @@ def createCombinedTable(total_phases):
         for row in combined_sorted:
             file.write(';'.join(row) + '\n')
 
+try:
+    with open("currentPhase.txt", "r", encoding="utf-8") as file:
+        total_phases = int(file.read().strip())
+except FileNotFoundError:
+    print("Error: The file 'currentPhase.txt' was not found.")
+except ValueError:
+    print("Error: The file 'currentPhase.txt' does not contain a valid number.")
+
 user_input = int(input("Enter phase number (or 0 for combined table): "))
 if user_input == 0:
-    total_phases = int(input("Enter total number of phases: "))
     createCombinedTable(total_phases)
 else:
     RefreshTable(user_input)
+    createCombinedTable(total_phases)

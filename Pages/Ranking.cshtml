@@ -22,6 +22,10 @@
     selectedPhase = @SharedFunctions.GetCurrentPhase();
   }
 
+  if(selectedPhase == 0){
+    selectedPhase = @SharedFunctions.GetCurrentPhase();
+  }
+
   if (selectedPhase == 1)
   {
     <p class="no-statistics">Няма статистика за 1-ва фаза</p>

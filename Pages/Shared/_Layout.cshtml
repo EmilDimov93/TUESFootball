@@ -23,13 +23,13 @@
                     <ul class="navbar-nav d-flex flex-row">
                         <li class="nav-item me-3">
                             <a class="nav-link" style="color: white; margin-left: 3%;" asp-area="" asp-page="/Index"
-                                asp-route-selectedPhase="@SharedFunctions.GetCurrentPhase()">
+                                asp-route-phase="@SharedFunctions.GetCurrentPhase()">
                                 <b>Начало</b>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" style="color: white;" asp-area="" asp-page="/Ranking"
-                                asp-route-selectedPhase="@SharedFunctions.GetCurrentPhase()">
+                                asp-route-phase="@SharedFunctions.GetCurrentPhase()">
                                 <b>Голмайстори</b>
                             </a>
                         </li>

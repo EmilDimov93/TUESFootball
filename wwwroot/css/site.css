@@ -185,7 +185,6 @@ tr:first-child .arrows-tournaments {
   transform: translate(-50%, -50%);
   height: 100vh;
   min-width: 0vw;
-  min-height: 0vh;
   z-index: -1;
   place-items: center;
   top: 50%;
@@ -305,7 +304,7 @@ tr:first-child .arrows-tournaments {
   }
 }
 
-@media (max-width: 750px) {
+@media (max-width: 1500px) {
   .dropbtn {
     top: -30.5px;
   }
@@ -315,35 +314,14 @@ tr:first-child .arrows-tournaments {
   html {
     font-size: 16px;
   }
+  .dropbtn {
+    top: -34.5px;
+  }
 }
 
-@media (min-width: 1200px) {
+@media (min-aspect-ratio: 1.75/1) {
   .banner {
     height: auto;
     width: 100vw;
-  }
-}
-
-@media only screen and (max-device-width: 768px) and (orientation: landscape) {
-  body > *  {
-    display: none;
-  }
-
-  body {
-    background-color: white;
-  }
-
-  .landscape-message {
-    display: block;
-  }
-
-  .dropbtn {
-    display: none;
-  }
-}
-
-@media only screen and (max-device-width: 768px) and (orientation: portrait) {
-  .landscape-message {
-    display: none;
   }
 }

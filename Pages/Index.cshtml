@@ -10,6 +10,16 @@
 @using System.IO;
 @using SharedCode;
 
+<style>
+    @@media (max-width: 600px) {
+
+        table td,
+        table th {
+            font-size: 9px;
+        }
+    }
+</style>
+
 @{
 
     int selectedPhase = 0;
@@ -56,24 +66,15 @@
 
 }
 
-<style>
-    @@media (max-width: 600px) {
-
-        table td,
-        table th {
-            font-size: 9px;
-        }
-    }
-</style>
-
 <body>
 
-    @if(selectedPhase != 0){
-        <button type="button" class="view-all-button"
-            onclick="location.href='/Tournaments?phase=@selectedPhase'"><u>Всички
+    @if (selectedPhase != 0)
+    {
+        <button type="button" class="view-all-button" onclick="location.href='/Tournaments?phase=@selectedPhase'"><u>Всички
                 турнири</u>&rarr;</button>
     }
-    else{
+    else
+    {
         <button type="button" class="view-all-button"
             onclick="location.href='/Tournaments?phase=@SharedFunctions.GetCurrentPhase()'"><u>Всички
                 турнири</u>&rarr;</button>
@@ -98,22 +99,16 @@
         <tbody>
             @for (int i = 0; i < content.Count(); i++)
             {
-
                 <tr>
-
                     <td>@(i + 1)</td>
 
                     @for (int j = 0; j < content[i].Count(); j++)
                     {
-
                         <td>
                             @content[i][j]
                         </td>
-
                     }
-
                 </tr>
-
             }
         </tbody>
     </table>

@@ -98,6 +98,9 @@
               for (int j = 0; j < 6; j++)
               {
                 <td>
+                  @if(j == 5){
+                    playerData[i][j] = Math.Round(Convert.ToDouble(playerData[i][j]), 2).ToString("F2");
+                  }
                   @playerData[i][j]
                 </td>
               }

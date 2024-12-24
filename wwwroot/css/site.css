@@ -112,7 +112,6 @@ tr:first-child .arrows-tournaments {
   text-shadow: 0 0 3px black, 0 0 5px black;
   margin-left: 4vw;
   position: absolute;
-  top: -4.7vh;
   width: 12vh;
 }
 
@@ -204,9 +203,9 @@ tr:first-child .arrows-tournaments {
   margin-left: auto;
   margin-right: auto;
   display: block;
-  width: 50vw;
+  width: 300px;
+  height: 60px;
   margin-top: 3vh;
-  height: 5vw;
 }
 
 .index-button-container {
@@ -260,9 +259,10 @@ tr:first-child .arrows-tournaments {
   white-space: nowrap;
 }
 
-.landscape-message {
-  display:none;
+.error-message {
+  display: none;
   font-size: 30px;
+  color: white;
 }
 
 .dropdown-icon {
@@ -315,7 +315,7 @@ tr:first-child .arrows-tournaments {
     font-size: 16px;
   }
   .dropbtn {
-    top: -34.5px;
+    top: -35.5px;
   }
 }
 
@@ -325,3 +325,18 @@ tr:first-child .arrows-tournaments {
     width: 100vw;
   }
 }
+
+/*Error message
+body > *  {
+  display: none;
+}
+
+.dropbtn {
+  display: none;
+}
+
+.error-message {
+  display: block;
+}
+
+*/

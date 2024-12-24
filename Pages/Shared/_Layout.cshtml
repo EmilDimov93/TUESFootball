@@ -56,7 +56,7 @@
         }
         else
         {
-            selectedPhase = @SharedFunctions.GetCurrentPhase();
+            selectedPhase = 0;
         }
 
         var currentPage = Context.Request.Path.Value?.ToLower() ?? string.Empty;
@@ -83,11 +83,22 @@
     @if (!currentPage.Contains(hideButtonPage.ToLower()))
     {
         <div class="dropdown">
-            <button id="phaseButton" class="dropbtn">Фаза @selectedPhase</button>
+            @if(selectedPhase != 0){
+                <button id="phaseButton" class="dropbtn">Фаза @selectedPhase <span class="dropdown-icon">▼</span></button>
+            }
+            else{
+                <button id="phaseButton" class="dropbtn">Обща <span class="dropdown-icon">▼</span></button>
+            }
+            
             <div id="dropdownContent" class="dropdown-content">
+
+                @if(currentPage == "/" || currentPage == "/index/"){
+                    <a style="color: white" href="#" onclick="changePhase(@(0), '@pageName')">Обща</a>
+                }
+
                 @for (int i = 0; i < SharedFunctions.GetCurrentPhase(); i++)
                 {
-                    <a style="color: white" href="#" onclick="changePhase(@(i), '@pageName')">Фаза @(i + 1)</a>
+                    <a style="color: white" href="#" onclick="changePhase(@(i + 1), '@pageName')">Фаза @(i + 1)</a>
                 }
             </div>
         </div>

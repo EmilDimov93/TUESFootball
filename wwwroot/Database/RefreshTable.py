@@ -77,4 +77,42 @@ def RefreshTable(phase):
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
 
-RefreshTable(int(input("Enter phase number: ")))
+def createCombinedTable(total_phases):
+    combined_content = {}
+
+    for phase in range(1, total_phases + 1):
+        try:
+            with open(str(phase) + 'table.txt', 'r', encoding='utf-8') as file:
+                for line in file:
+                    team_data = line.strip().split(';')
+                    team_name = team_data[0]
+                    if team_name not in combined_content:
+                        combined_content[team_name] = [team_name] + ["0"] * 9
+
+                    for i in range(1, len(team_data)):
+                        if i == 9:
+                            continue
+                        combined_content[team_name][i] = str(int(combined_content[team_name][i]) + int(team_data[i]))
+
+        except FileNotFoundError:
+            print(f"Error: The file {str(phase)}table.txt was not found.")
+        except ValueError as e:
+            print(f"Error processing data: {e}")
+
+    for team_name, data in combined_content.items():
+        total_matches = int(data[1])
+        total_points = int(data[8])
+        data[9] = f"{(total_points / total_matches):.3f}" if total_matches > 0 else "0.000"
+
+    combined_sorted = sorted(combined_content.values(), key=lambda x: float(x[8]) if x[8] != "0" else 0, reverse=True)
+
+    with open('0table.txt', 'w', encoding='utf-8') as file:
+        for row in combined_sorted:
+            file.write(';'.join(row) + '\n')
+
+user_input = int(input("Enter phase number (or 0 for combined table): "))
+if user_input == 0:
+    total_phases = int(input("Enter total number of phases: "))
+    createCombinedTable(total_phases)
+else:
+    RefreshTable(user_input)

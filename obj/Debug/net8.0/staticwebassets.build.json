@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "4Putosp0GoCwBlPJPc8jwMBs1mi75xOT+PWvAuGGYpk=",
+  "Hash": "FrQRJ3wuPv1fYwE9Hk+/gnOZmSvVIY0GBFJOOpUGmr0=",
   "Source": "Football",
   "BasePath": "_content/Football",
   "Mode": "Default",
@@ -72,6 +72,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "C:\\Code\\Football\\wwwroot\\Database\\0table.txt",
+      "SourceId": "Football",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Code\\Football\\wwwroot\\",
+      "BasePath": "_content/Football",
+      "RelativePath": "Database/0table.txt",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Database\\0table.txt"
     },
     {
       "Identity": "C:\\Code\\Football\\wwwroot\\Database\\1matches.txt",

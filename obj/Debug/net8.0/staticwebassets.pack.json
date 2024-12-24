@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\Football.bundle.scp.css"
     },
     {
+      "Id": "C:\\Code\\Football\\wwwroot\\Database\\0table.txt",
+      "PackagePath": "staticwebassets\\Database\\0table.txt"
+    },
+    {
       "Id": "C:\\Code\\Football\\wwwroot\\Database\\1matches.txt",
       "PackagePath": "staticwebassets\\Database\\1matches.txt"
     },

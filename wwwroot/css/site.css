@@ -266,6 +266,11 @@ tr:first-child .arrows-tournaments {
   font-size: 30px;
 }
 
+.dropdown-icon {
+  margin-left: auto;
+  font-size: 12px;
+}
+
 @media (max-width: 500px) {
   .dropbtn {
     top: -4.5vh;

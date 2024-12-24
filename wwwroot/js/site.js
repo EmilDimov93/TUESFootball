@@ -4,7 +4,7 @@
 // Write your JavaScript code.
 
 function changePhase(newPhase, currentPage) {
-    selectedPhase = newPhase + 1;
+    selectedPhase = newPhase;
     console.log(currentPage + '/?phase=' + selectedPhase);
     window.location.href = currentPage + '/?phase=' + selectedPhase;
 }

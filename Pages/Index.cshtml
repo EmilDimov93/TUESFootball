@@ -20,7 +20,7 @@
     }
     else
     {
-        selectedPhase = @SharedFunctions.GetCurrentPhase();
+        selectedPhase = 0;
     }
 
     using var sr = new StreamReader(System.IO.Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Database",
@@ -68,9 +68,16 @@
 
 <body>
 
-    <button type="button" class="view-all-button"
-        onclick="location.href='/Tournaments?phase=@selectedPhase'"><u>Всички
-            турнири</u>&rarr;</button>
+    @if(selectedPhase != 0){
+        <button type="button" class="view-all-button"
+            onclick="location.href='/Tournaments?phase=@selectedPhase'"><u>Всички
+                турнири</u>&rarr;</button>
+    }
+    else{
+        <button type="button" class="view-all-button"
+            onclick="location.href='/Tournaments?phase=@SharedFunctions.GetCurrentPhase()'"><u>Всички
+                турнири</u>&rarr;</button>
+    }
 
     <table>
         <thead>

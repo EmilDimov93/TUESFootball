@@ -279,19 +279,19 @@ tr:first-child .arrows-tournaments {
   position: absolute;
   left: 100%;
   margin-left: 10px;
-  background-color: #bbbbbb;
+  background-color: #bbbbbbEE;
   padding: 10px;
   border: 1px solid #ccc;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   z-index: 10;
   width: fit-content;
-  max-width: 60vw;
+  max-width: 70vw;
   max-height: 300px;
   color: black;
   font-size: 10px;
   overflow: auto;
-  top: -250px;
+  top: -200px;
 }
 
 .popup-container:hover .popup-window {
@@ -369,7 +369,7 @@ tr:first-child .arrows-tournaments {
 
   .ranking-table td,
   .ranking-table th {
-    font-size: 11px;
+    font-size: 9px;
   }
 }
 

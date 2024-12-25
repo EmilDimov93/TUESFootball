@@ -104,7 +104,18 @@
                                         <tr>
                                             @for (int b = 1; b < row.Count; b++)
                                             {
-                                                <td>@row[b]</td>
+                                                if(row[b] == "1"){
+                                                    <td style="background-color: #42f548; color: black;">@row[b]</td>
+                                                }
+                                                else if(row[b] == "2"){
+                                                    <td style="background-color: #d0ff00; color: black;">@row[b]</td>
+                                                }
+                                                else if(row[b] == "3"){
+                                                    <td style="background-color: #ffff00; color: black;">@row[b]</td>
+                                                }
+                                                else{
+                                                    <td style="background-color: #828282; color: black;">@row[b]</td>
+                                                }
                                             }
                                         </tr>
                                     </tbody>

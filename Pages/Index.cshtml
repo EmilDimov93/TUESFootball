@@ -28,9 +28,10 @@
         phase + "placing.txt")))
         {
             string? line;
+            string[] tarr = new string[0];;
             while ((line = sr.ReadLine()) != null)
             {
-                string[] tarr = line.Split(";");
+                tarr = line.Split(";");
 
                 if(tarr[0] == teamName){
 
@@ -41,6 +42,10 @@
 
                     return row;
                 }
+            }
+
+            for(int i = 0; i < tarr.Length; i++){
+                row.Add("-");
             }
         }
 

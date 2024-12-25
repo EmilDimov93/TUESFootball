@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\Database\\1matches.txt"
     },
     {
+      "Id": "C:\\Code\\Football\\wwwroot\\Database\\1placing.txt",
+      "PackagePath": "staticwebassets\\Database\\1placing.txt"
+    },
+    {
       "Id": "C:\\Code\\Football\\wwwroot\\Database\\1table.txt",
       "PackagePath": "staticwebassets\\Database\\1table.txt"
     },
@@ -27,6 +31,10 @@
     {
       "Id": "C:\\Code\\Football\\wwwroot\\Database\\2matches.txt",
       "PackagePath": "staticwebassets\\Database\\2matches.txt"
+    },
+    {
+      "Id": "C:\\Code\\Football\\wwwroot\\Database\\2placing.txt",
+      "PackagePath": "staticwebassets\\Database\\2placing.txt"
     },
     {
       "Id": "C:\\Code\\Football\\wwwroot\\Database\\2table.txt",

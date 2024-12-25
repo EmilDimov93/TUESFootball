@@ -4,63 +4,47 @@
     ViewData["Title"] = "Home page";
 }
 
-@inject Microsoft.AspNetCore.Hosting.IWebHostEnvironment Env
-
 @using System;
 @using System.IO;
 @using SharedCode;
 
-<style>
-    @@media (max-width: 600px) {
-
-        table td,
-        table th {
-            font-size: 9px;
-        }
-    }
-</style>
-
 @{
 
-    int selectedPhase = 0;
+    int selectedPhase = SharedFunctions.GetSelectedPhase(Request, 0);
 
-    if (Request.Query["phase"].Count > 0)
+    List<List<string>> content = SharedFunctions.ReadFile(selectedPhase, "table.txt");
+
+    if (selectedPhase == 0)
     {
-        int.TryParse(Request.Query["phase"], out selectedPhase);
-    }
-    else
-    {
-        selectedPhase = 0;
+        selectedPhase = SharedFunctions.GetCurrentPhase();
     }
 
-    using var sr = new StreamReader(System.IO.Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Database",
-    selectedPhase + "table.txt"));
-
-    List<List<string>> content = new List<List<string>>();
-
-    string? line;
-
-    while ((line = sr.ReadLine()) != null)
+    List<string> GetPlacingRow(int phase, string teamName)
     {
-        string[] tarr = line.Split(";");
 
-        if (line[0] == '0')
+        List<string> row = new List<string>();
+
+        using (StreamReader sr = new StreamReader(System.IO.Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Database",
+        phase + "placing.txt")))
         {
-            break;
-        }
-
-        for (int i = 0; i < tarr.Length; i += 10)
-        {
-
-            List<string> sublist = new List<string>();
-
-            for (int j = 0; j < 10 && i + j < tarr.Length; j++)
+            string? line;
+            while ((line = sr.ReadLine()) != null)
             {
-                sublist.Add(tarr[i + j]);
-            }
+                string[] tarr = line.Split(";");
 
-            content.Add(sublist);
+                if(tarr[0] == teamName){
+
+                    for (int i = 0; i < tarr.Length; i++)
+                    {
+                        row.Add(tarr[i]);
+                    }
+
+                    return row;
+                }
+            }
         }
+
+        return row;
 
     }
 
@@ -68,19 +52,10 @@
 
 <body>
 
-    @if (selectedPhase != 0)
-    {
-        <button type="button" class="view-all-button" onclick="location.href='/Tournaments?phase=@selectedPhase'"><u>Всички
-                турнири</u>&rarr;</button>
-    }
-    else
-    {
-        <button type="button" class="view-all-button"
-            onclick="location.href='/Tournaments?phase=@SharedFunctions.GetCurrentPhase()'"><u>Всички
-                турнири</u>&rarr;</button>
-    }
+    <button type="button" class="view-all-button" onclick="location.href='/Tournaments?p=@selectedPhase'"><u>Всички
+            турнири</u>&rarr;</button>
 
-    <table>
+    <table class="index-table">
         <thead>
             <tr>
                 <th>№</th>
@@ -102,7 +77,38 @@
                 <tr>
                     <td>@(i + 1)</td>
 
-                    @for (int j = 0; j < content[i].Count(); j++)
+                    <td class="popup-container">
+                        <a href="#" class="hover-anchor"><u>@content[i][0]</u></a>
+                        <div class="popup-window">
+                            @for (int j = 1; j <= SharedFunctions.GetCurrentPhase(); j++)
+                            {
+                                List<string> row = GetPlacingRow(j, content[i][0]);
+
+                                <p style="margin-left: 5px; font-size: 15px; background-color: #5c0c15; width: fit-content; padding-left: 10px; padding-right: 10px; border-radius: 10px; color: white; border: 2px solid white;">Фаза @j</p>
+
+                                <table class="popup-table">
+                                    <thead>
+                                        <tr>
+                                            @for (int a = 1; a < row.Count; a++)
+                                            {
+                                                <th>@a</th>
+                                            }
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            @for (int b = 1; b < row.Count; b++)
+                                            {
+                                                <td>@row[b]</td>
+                                            }
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            }
+                        </div>
+                    </td>
+
+                    @for (int j = 1; j < content[i].Count(); j++)
                     {
                         <td>
                             @content[i][j]

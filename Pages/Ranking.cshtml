@@ -7,114 +7,64 @@
 
 @using SharedCode
 
-<h2 class="table-label">Голмайстори</h2>
+<body>
 
-@{
+  <h2 class="table-label">Голмайстори</h2>
 
-  int selectedPhase = 0;
+  @{
 
-  if (Request.Query["phase"].Count > 0)
-  {
-    int.TryParse(Request.Query["phase"], out selectedPhase);
-  }
-  else
-  {
-    selectedPhase = @SharedFunctions.GetCurrentPhase();
-  }
+    int selectedPhase = SharedFunctions.GetSelectedPhase(Request, SharedFunctions.GetCurrentPhase());
 
-  if (selectedPhase == 0)
-  {
-    selectedPhase = @SharedFunctions.GetCurrentPhase();
-  }
-
-  if (selectedPhase == 1)
-  {
-    <p class="no-statistics">Няма статистика за 1-ва фаза</p>
-  }
-  else
-  {
-    StreamReader sr = new StreamReader(System.IO.Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Database",
-    selectedPhase + "goals.txt"));
-
-    string? line;
-
-    List<List<string>> playerData = new List<List<string>>();
-
-    while ((line = sr.ReadLine()) != null)
+    if (selectedPhase == 1)
     {
-      string[] tarr = line.Split(";");
-
-      for (int i = 0; i < tarr.Length; i += 6)
-      {
-        List<string> sublist = new List<string>();
-
-        for (int j = 0; j < 5 && i + j < tarr.Length; j++)
-        {
-          sublist.Add(tarr[i + j]);
-        }
-
-        int value1, value2;
-
-        if (int.TryParse(sublist[4], out value1) && int.TryParse(sublist[3], out value2))
-        {
-          sublist.Add((Math.Round(float.Parse(sublist[4]) / float.Parse(sublist[3]), 2)).ToString());
-        }
-
-        playerData.Add(sublist);
-      }
+      <p class="no-statistics">Няма статистика за 1-ва фаза</p>
     }
+    else
+    {
+      List<List<string>> content = SharedFunctions.ReadFile(selectedPhase, "goals.txt");
 
-    sr.Close();
-
-    playerData = playerData.OrderByDescending(p => int.Parse(p[4])).ToList();
-
-    <style>
-      @@media (max-width: 600px) {
-
-        table td,
-        table th {
-          font-size: 11px;
-        }
+      for (int i = 0; i < content.Count; i++)
+      {
+        content[i].Add(Math.Round(float.Parse(content[i][4]) / float.Parse(content[i][3]), 2).ToString("F2"));
       }
-    </style>
 
-    <table>
-      <thead>
-        <tr>
-          <th>№</th>
-          <th>Играч</th>
-          <th>Отбор</th>
-          <th>Участия</th>
-          <th>Мачове</th>
-          <th>Голове</th>
-          <th>Ср на мач</th>
-        </tr>
-      </thead>
-      <tbody>
-        @for (int i = 0; i < playerData.Count(); i++)
-        {
+      content = content.OrderByDescending(p => int.Parse(p[4])).ToList();
 
+      <table class="ranking-table">
+        <thead>
           <tr>
-
-            <td>@(i+1)</td>
-
-            @{
-              for (int j = 0; j < 6; j++)
-              {
-                <td>
-                  @if (j == 5)
-                  {
-                    playerData[i][j] = Math.Round(Convert.ToDouble(playerData[i][j]), 2).ToString("F2");
-                  }
-                  @playerData[i][j]
-                </td>
-              }
-            }
-
+            <th>№</th>
+            <th>Играч</th>
+            <th>Отбор</th>
+            <th>Участия</th>
+            <th>Мачове</th>
+            <th>Голове</th>
+            <th>Ср на мач</th>
           </tr>
+        </thead>
+        <tbody>
+          @for (int i = 0; i < content.Count(); i++)
+          {
 
-        }
-      </tbody>
-    </table>
+            <tr>
+
+              <td>@(i + 1)</td>
+
+              @{
+                for (int j = 0; j < 6; j++)
+                {
+                  <td>
+                    @content[i][j]
+                  </td>
+                }
+              }
+
+            </tr>
+
+          }
+        </tbody>
+      </table>
+    }
   }
-}
+  }
+</body>

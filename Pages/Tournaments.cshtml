@@ -6,90 +6,60 @@
 @using System.IO
 @using Microsoft.AspNetCore.Hosting
 
-@inject IWebHostEnvironment _env
-
 @using SharedCode
 
 @{
 
-  List<List<string>> tournaments = new List<List<string>>();
+  int selectedPhase = SharedFunctions.GetSelectedPhase(Request, SharedFunctions.GetCurrentPhase());
 
-  int selectedPhase = 0;
+  List<List<string>> tournaments = SharedFunctions.ReadFile(selectedPhase, "tournaments.txt");
 
-  void getTableContents()
-  {
-    if (Request.Query["phase"].Count > 0)
-    {
-      int.TryParse(Request.Query["phase"], out selectedPhase);
-    }
-
-    using (StreamReader sr = new StreamReader(System.IO.Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Database",
-    selectedPhase + "tournaments.txt")))
-    {
-      string? line;
-      while ((line = sr.ReadLine()) != null)
-      {
-        string[] tarr = line.Split(";");
-
-        for (int i = 0; i < tarr.Length; i += 5)
-        {
-          List<string> sublist = new List<string>();
-
-          for (int j = 0; j < 5 && i + j < tarr.Length; j++)
-          {
-            sublist.Add(tarr[i + j]);
-          }
-
-          tournaments.Add(sublist);
-        }
-      }
-    }
-  }
-
-  getTableContents();
 }
 
-<h2 class="table-label">Турнири</h2>
+<body>
 
-<table>
-  <thead>
-    <tr>
-      <th>№</th>
-      <th>Терен</th>
-      <th>Победител</th>
-    </tr>
-  </thead>
-  <tbody>
+  <h2 class="table-label">Турнири</h2>
 
-    @for (int i = 0; i < tournaments.Count() && tournaments[i][0] != "0"; i++)
-    {
+  <table>
+    <thead>
+      <tr>
+        <th>№</th>
+        <th>Терен</th>
+        <th>Победител</th>
+      </tr>
+    </thead>
+    <tbody>
 
-      <tr onclick="rowClicked(@i, @selectedPhase)" style="cursor: pointer;">
+      @for (int i = 0; i < tournaments.Count() && tournaments[i][0] != "0"; i++)
+      {
 
-        @for (int j = 0; j < tournaments[i].Count(); j++)
-        {
+        <tr onclick="rowClicked(@i, @selectedPhase)" style="cursor: pointer;">
 
-          if (j == 0 || j >= 3)
+          @for (int j = 0; j < tournaments[i].Count(); j++)
           {
-            if (j == 4 && tournaments[i][j] == "0")
+
+            if (j == 0 || j >= 3)
             {
-              <td>Предстои</td>
+              if (j == 4 && tournaments[i][j] == "0")
+              {
+                <td>Предстои</td>
+              }
+              else
+              {
+                <td>@tournaments[i][j]</td>
+              }
             }
-            else
-            {
-              <td>@tournaments[i][j]</td>
-            }
+
           }
 
-        }
+          <td class="arrows-tournaments">&rarr;</td>
 
-        <td class="arrows-tournaments">&rarr;</td>
+        </tr>
 
-      </tr>
+      }
+    </tbody>
+  </table>
 
-    }
   </tbody>
-</table>
-
-</tbody>
-</table>
+  </table>
+</body>

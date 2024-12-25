@@ -23,13 +23,13 @@
                     <ul class="navbar-nav d-flex flex-row">
                         <li class="nav-item me-3">
                             <a class="nav-link" style="color: white; margin-left: 3%;" asp-area="" asp-page="/Index"
-                                asp-route-phase="0">
+                                asp-route-p="0">
                                 <b>Начало</b>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" style="color: white;" asp-area="" asp-page="/Ranking"
-                                asp-route-phase="@SharedFunctions.GetCurrentPhase()">
+                                asp-route-p="@SharedFunctions.GetCurrentPhase()">
                                 <b>Голмайстори</b>
                             </a>
                         </li>
@@ -44,23 +44,22 @@
     </header>
 
     @{
-        int selectedPhase = 0;
 
         var viewPath = ViewContext.View.Path;
         var viewName = viewPath.Substring(viewPath.LastIndexOf("/") + 1);
         var pageName = "/" + System.IO.Path.GetFileNameWithoutExtension(viewName);
 
-        if (@Context.Request.Query["phase"].Count > 0)
-        {
-            int.TryParse(@Context.Request.Query["phase"], out selectedPhase);
-        }
-        else
-        {
-            selectedPhase = 0;
-        }
-
         var currentPage = Context.Request.Path.Value?.ToLower() ?? string.Empty;
         var hideButtonPage = "/opentournament";
+
+        int selectedPhase;
+
+        if(currentPage == "/" || currentPage == "/index/"){
+            selectedPhase = SharedFunctions.GetSelectedPhase(@Context.Request, 0);
+        }
+        else{
+            selectedPhase = SharedFunctions.GetSelectedPhase(@Context.Request, SharedFunctions.GetCurrentPhase());
+        }
     }
 
     <script>

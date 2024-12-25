@@ -270,6 +270,58 @@ tr:first-child .arrows-tournaments {
   font-size: 12px;
 }
 
+.popup-container {
+  position: relative;
+}
+
+.popup-window {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  margin-left: 10px;
+  background-color: #bbbbbb;
+  padding: 10px;
+  border: 1px solid #ccc;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  z-index: 10;
+  width: fit-content;
+  color: black;
+  font-size: 10px;
+}
+
+.popup-container:hover .popup-window {
+  display: block;
+}
+
+.popup-table {
+  width: fit-content;
+  text-align: center;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-left: 5px;
+  margin-right: auto;
+  margin-top: -15px;
+  margin-bottom: 15px;
+}
+
+.popup-table th, .popup-table td {
+  height: 10px;
+  width: 10px;
+  padding: 8px;
+}
+
+.hover-anchor {
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+
+.hover-anchor:hover {
+  color: black;
+}
+
 @media (max-width: 500px) {
   .dropbtn {
     top: -4.5vh;
@@ -302,6 +354,16 @@ tr:first-child .arrows-tournaments {
     justify-content: center;
     gap: 10px;
   }
+
+  .index-table td,
+  .index-table th {
+    font-size: 9px;
+  }
+
+  .ranking-table td,
+  .ranking-table th {
+    font-size: 11px;
+  }
 }
 
 @media (max-width: 1500px) {
@@ -314,6 +376,7 @@ tr:first-child .arrows-tournaments {
   html {
     font-size: 16px;
   }
+
   .dropbtn {
     top: -35.5px;
   }

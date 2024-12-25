@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "FrQRJ3wuPv1fYwE9Hk+/gnOZmSvVIY0GBFJOOpUGmr0=",
+  "Hash": "HS+xT7yjIY2wypxClgoufBPewuKWjT2EtNBy1niQKXM=",
   "Source": "Football",
   "BasePath": "_content/Football",
   "Mode": "Default",
@@ -112,6 +112,25 @@
       "OriginalItemSpec": "wwwroot\\Database\\1matches.txt"
     },
     {
+      "Identity": "C:\\Code\\Football\\wwwroot\\Database\\1placing.txt",
+      "SourceId": "Football",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Code\\Football\\wwwroot\\",
+      "BasePath": "_content/Football",
+      "RelativePath": "Database/1placing.txt",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Database\\1placing.txt"
+    },
+    {
       "Identity": "C:\\Code\\Football\\wwwroot\\Database\\1table.txt",
       "SourceId": "Football",
       "SourceType": "Discovered",
@@ -186,6 +205,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Database\\2matches.txt"
+    },
+    {
+      "Identity": "C:\\Code\\Football\\wwwroot\\Database\\2placing.txt",
+      "SourceId": "Football",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Code\\Football\\wwwroot\\",
+      "BasePath": "_content/Football",
+      "RelativePath": "Database/2placing.txt",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Database\\2placing.txt"
     },
     {
       "Identity": "C:\\Code\\Football\\wwwroot\\Database\\2table.txt",

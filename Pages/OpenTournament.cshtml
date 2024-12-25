@@ -33,7 +33,13 @@
       }
     }
   }
-  string[] sLine = tLine.Split(";");
+
+  string[] sLine = {"Error"};  
+
+  if (tLine != null)
+  {
+    sLine = tLine.Split(";"); 
+  }
 
   List<List<string>> tournaments = SharedFunctions.ReadFile(selectedPhase, "matches.txt").GetRange(int.Parse(sLine[1]) -
   1, int.Parse(sLine[2]) - int.Parse(sLine[1]) + 1);

@@ -286,8 +286,8 @@ tr:first-child .arrows-tournaments {
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   z-index: 10;
-  transform: scale(0) translateY(0); /* Start scaled down */
-  transform-origin: left; /* Grow from the bottom-left corner */
+  transform: scale(0) translateY(0);
+  transform-origin: left;
   max-width: 70vw;
   max-height: calc(100vh - 20px);
   color: black;
@@ -295,7 +295,7 @@ tr:first-child .arrows-tournaments {
   overflow: auto;
   top: 0;
   bottom: auto;
-  transition: opacity 0.5s ease, visibility 0.5s ease, transform 0.5s ease; /* Smooth transition -200px */
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .popup-container:hover .popup-window {

@@ -1,0 +1,40 @@
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+@using System;
+@using System.IO;
+@using SharedCode;
+
+<body>
+    @{List<List<string>> content = new List<List<string>>();
+
+            using (StreamReader sr = new StreamReader(System.IO.Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Database", "images.txt")))
+            {
+                string? line;
+                while ((line = sr.ReadLine()) != null)
+                {
+                    string[] tarr = line.Split(";");
+
+                    for (int i = 0; i < tarr.Length; i += 2)
+                    {
+                        List<string> sublist = new List<string>();
+
+                        for (int j = 0; j < 2 && i + j < tarr.Length; j++)
+                        {
+                            sublist.Add(tarr[i + j]);
+                        }
+
+                        content.Add(sublist);
+                    }
+                }
+            }
+}
+
+    <div class="table-label">
+        <img src=@content[0][1]>
+    </div>
+
+</body>

@@ -53,6 +53,10 @@
       "PackagePath": "staticwebassets\\Database\\currentPhase.txt"
     },
     {
+      "Id": "C:\\Code\\Football\\wwwroot\\Database\\images.txt",
+      "PackagePath": "staticwebassets\\Database\\images.txt"
+    },
+    {
       "Id": "C:\\Code\\Football\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

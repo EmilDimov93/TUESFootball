@@ -50,7 +50,8 @@
         var pageName = "/" + System.IO.Path.GetFileNameWithoutExtension(viewName);
 
         var currentPage = Context.Request.Path.Value?.ToLower() ?? string.Empty;
-        var hideButtonPage = "/opentournament";
+        var hideButtonPage1 = "/opentournament";
+        var hideButtonPage2 = "/images";
 
         int selectedPhase;
 
@@ -79,7 +80,7 @@
         });
     </script>
 
-    @if (!currentPage.Contains(hideButtonPage.ToLower()))
+    @if (!currentPage.Contains(hideButtonPage1.ToLower()) && !currentPage.Contains(hideButtonPage2.ToLower()))
     {
         <div class="dropdown">
             @if(selectedPhase != 0){

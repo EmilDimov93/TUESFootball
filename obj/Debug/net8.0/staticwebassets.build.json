@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "HS+xT7yjIY2wypxClgoufBPewuKWjT2EtNBy1niQKXM=",
+  "Hash": "QHyS06t7bVp6Uhmmc4Q3IGlIoysgsYcV5kotjx9GiJ8=",
   "Source": "Football",
   "BasePath": "_content/Football",
   "Mode": "Default",
@@ -281,6 +281,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Database\\currentPhase.txt"
+    },
+    {
+      "Identity": "C:\\Code\\Football\\wwwroot\\Database\\images.txt",
+      "SourceId": "Football",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Code\\Football\\wwwroot\\",
+      "BasePath": "_content/Football",
+      "RelativePath": "Database/images.txt",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Database\\images.txt"
     },
     {
       "Identity": "C:\\Code\\Football\\wwwroot\\Database\\RefreshTable.py",

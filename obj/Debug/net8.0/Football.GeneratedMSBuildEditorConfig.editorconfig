@@ -18,6 +18,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Code\Football
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Code/Football/Pages/Images.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW1hZ2VzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Code/Football/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
